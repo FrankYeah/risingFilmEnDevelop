@@ -1,7 +1,10 @@
 <template>
   <div>
     <topBar/>
-    <nuxt/>
+    <div class="default-setting">
+      <nuxt/>
+    </div>
+    
     <bottomBar/>
   </div>
 </template>
@@ -85,7 +88,6 @@ table {
 }
 
 body {
-  min-height: 100vh;
   line-height: 1;
   margin: 0px;
   padding: 0px;
@@ -125,6 +127,10 @@ textarea {
   &::placeholder {
     color: rgba(0, 0, 0, 0.6);
   }
+}
+
+.default-setting {
+  min-height: calc(100vh - 70px);
 }
 
 @media( max-width: 1023px ){

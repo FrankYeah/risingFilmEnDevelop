@@ -1,6 +1,11 @@
 <template>
   <div class="bottom">
-
+    <div class="bottom-social">
+      <img v-lazy="require('@/assets/img/icon/fb.png')" alt="fb">
+      <img v-lazy="require('@/assets/img/icon/ig.png')" alt="ig">
+      <img v-lazy="require('@/assets/img/icon/mail.png')" alt="mail">
+    </div>
+    <div class="bottom-copyright">© 2021, RISING FILMS ALL RIGHTS RESERVED</div>
   </div>
 </template>
 
@@ -24,7 +29,12 @@ export default {
     
   },
   watch: {
-    
+    '$route.name': {
+      handler: function(route) {
+        // this.isShowTopSide = route == 'login' ?  false : true
+      },
+      immediate: true
+    },
   }
 }
 </script>
@@ -32,7 +42,29 @@ export default {
 <style lang="scss">
 
 .bottom {
-  
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+
+  &-social {
+
+    & img {
+      width: 20px;
+      height: 100%;
+      margin-right: 18px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &-copyright {
+    font-size: 14px;
+  }
 }
 
 
