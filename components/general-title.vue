@@ -40,7 +40,7 @@ export default {
 
   }
 
-  &-line {  
+  &-line {
     width: 32px;
     height: 1.5px;
     margin-top: 5px;
