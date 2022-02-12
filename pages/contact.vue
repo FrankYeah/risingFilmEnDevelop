@@ -1,22 +1,24 @@
 <template>
   <div class="contact">
-    <div class="contact-row">
-      <div class="contact-row-inner">
-        <div class="contact-line"></div>
-        <div class="contact-head">Contact</div>
-      </div>
-      <form @submit.prevent="handleSubmit()"
-        class="contact-form"
-      >
-        <input class="contact-input" v-model="name" type="text" placeholder="Name">
-        <input class="contact-input" v-model="phone" type="text" placeholder="Phone">
-        <input class="contact-input" v-model="mail" type="text" placeholder="E-Mail">
-        <textarea class="contact-input contact-textarea" v-model="message" placeholder="Message"></textarea>
-        <div class="contact-btn-box">
-          <button class="contact-btn">Submit</button>
+    <div class="contact-box">
+      <div class="contact-row">
+        <div class="contact-row-inner">
+          <div class="contact-line"></div>
+          <div class="contact-head">Contact</div>
         </div>
-        
-      </form>
+        <form @submit.prevent="handleSubmit()"
+          class="contact-form"
+        >
+          <input class="contact-input" v-model="name" type="text" placeholder="Name">
+          <input class="contact-input" v-model="phone" type="text" placeholder="Phone">
+          <input class="contact-input" v-model="mail" type="text" placeholder="E-Mail">
+          <textarea class="contact-input contact-textarea" v-model="message" placeholder="Message"></textarea>
+          <div class="contact-btn-box">
+            <button class="contact-btn">Submit</button>
+          </div>
+          
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -48,7 +50,9 @@ export default {
 
   },
   methods: {
-    
+    handleSubmit() {
+      
+    }
   },
   watch: {
     
@@ -59,11 +63,18 @@ export default {
 <style lang="scss" scoped>
 
 .contact {
-  position: fixed;
-  left: 0%;
-  top: 50%;
-  transform: translate(0%, -50%);
-  text-align: center;
+  position: relative;
+  max-width: 1200px;
+  height: calc(100vh - 70px);
+  margin: auto;
+
+  &-box {
+    margin: auto;
+    position: absolute;
+    // left: 0%;
+    top: 50%;
+    transform: translate(0%, calc(-50% + 20px));
+  }
 
   &-row {
     display: flex;

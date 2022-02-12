@@ -40,12 +40,12 @@
     font-style: normal;
   }
 
-  @font-face {
+  /* @font-face {
     font-family: "Roboto";
     src: url("Roboto-LightItalic.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
-  }
+  } */
 
   @font-face {
     font-family: "Roboto";

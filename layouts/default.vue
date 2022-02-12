@@ -93,6 +93,7 @@ body {
   padding: 0px;
   font-family: 'Roboto', 'Noto Sans TC', 'Noto Sans SC' ,sans-serif;
   font-size: 18px;
+  font-weight: 300;
   color: #FFFFFF;
   background-color: #171719;
 }

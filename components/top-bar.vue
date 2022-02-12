@@ -1,17 +1,18 @@
 <template>
   <div class="top">
-    <div class="top-row">
-      <router-link to="/">
-        <img
-          :src="require('@/assets/img/icon/logo.png')"
-          alt="logo"
-        >
-      </router-link>
-      <img @click="isShowMenu = true"
-        :src="require('@/assets/img/icon/menu.png')"
-        alt="menu"
+    
+    <router-link class="top-logo" to="/">
+      <img
+        :src="require('@/assets/img/icon/logo.png')"
+        alt="logo"
       >
-    </div>
+    </router-link>
+    <img @click="isShowMenu = true"
+      class="top-menu"
+      :src="require('@/assets/img/icon/menu.png')"
+      alt="menu"
+    >
+    
 
     <!-- popup -->
     <div v-if="isShowMenu" class="top-popup">
@@ -141,8 +142,37 @@ export default {
   top: 0px;
   left: 0px;
   width: calc(100% - 64px);
-  padding: 32px;
   z-index: 1;
+
+  &-logo {
+    position: fixed;
+    top: 32px;
+    left: 32px;
+
+    & img {
+      width: 42px;
+      height: 100%;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+  }
+
+  &-menu {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    width: 52px;
+    height: 21.5px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 
   &-row {
     display: flex;
