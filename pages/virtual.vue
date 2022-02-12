@@ -5,6 +5,7 @@
         <generalTitle :title="'Virtual Production'"></generalTitle>
       </headTop>
     </boxWidth>
+    <div class="virtual-head">COMING SOON</div>
   </div>
 </template>
 
@@ -45,6 +46,19 @@ export default {
 <style lang="scss" scoped>
 
 .virtual {
+
+  &-head {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 64px;
+    font-weight: 900;
+    text-shadow: 0 0 2px white;
+    color: #171719;
+    -webkit-text-stroke: 2px white;
+  }
   
 }
 

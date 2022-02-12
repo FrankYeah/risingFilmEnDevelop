@@ -46,7 +46,7 @@ export default {
   text-align: center;
 
   &-head {
-    font-size: 60px;
+    font-size: 64px;
   }
 
   &-sub {

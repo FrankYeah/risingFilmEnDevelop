@@ -142,6 +142,7 @@ export default {
   left: 0px;
   width: calc(100% - 64px);
   padding: 32px;
+  z-index: 1;
 
   &-row {
     display: flex;
