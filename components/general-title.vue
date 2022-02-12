@@ -1,6 +1,7 @@
 <template>
   <div class="title">
-    
+    <div class="title-text">{{ title }}</div>
+    <div class="title-line"></div>
   </div>
 </template>
 
@@ -10,11 +11,13 @@ export default {
 
   },
   props: {
-    
+    title: {
+      type: String
+    },
   },
   data () {
     return {
-
+      
     }
   },
   computed: {
@@ -31,7 +34,18 @@ export default {
 
 <style lang="scss" scoped>
 
-.bottom {
+.title {
+
+  &-text {
+
+  }
+
+  &-line {  
+    width: 32px;
+    height: 1.5px;
+    margin-top: 5px;
+    background-color: white;
+  }
   
 }
 

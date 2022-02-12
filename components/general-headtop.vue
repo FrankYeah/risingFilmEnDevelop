@@ -1,6 +1,6 @@
 <template>
   <div class="headtop">
-    
+    <slot></slot>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 
 .headtop {
-  
+  padding-top: 150px;
 }
 
 

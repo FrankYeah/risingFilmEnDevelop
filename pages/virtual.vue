@@ -1,6 +1,10 @@
 <template>
   <div class="virtual">
-
+    <boxWidth>
+      <headTop>
+        <generalTitle :title="'Virtual Production'"></generalTitle>
+      </headTop>
+    </boxWidth>
   </div>
 </template>
 
@@ -14,7 +18,9 @@ export default {
   },
   layout: 'default',
   components: {
-
+    boxWidth: require('~/components/general-boxwidth.vue').default,
+    headTop: require('~/components/general-headtop.vue').default,
+    generalTitle: require('~/components/general-title.vue').default
   },
   props: {
     

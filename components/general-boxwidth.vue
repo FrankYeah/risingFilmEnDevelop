@@ -1,6 +1,6 @@
 <template>
   <div class="boxwidth">
-    
+    <slot></slot>
   </div>
 </template>
 
@@ -32,7 +32,8 @@ export default {
 <style lang="scss" scoped>
 
 .boxwidth {
-  
+  max-width: 1000px;
+  margin: auto;
 }
 
 
