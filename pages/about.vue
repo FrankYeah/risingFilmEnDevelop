@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div class="about">
 
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.bottom {
+.about {
   
 }
 

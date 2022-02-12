@@ -1,6 +1,6 @@
 <template>
-  <div class="top" style="font-size: 50px;">
-12123123 how arr you <i></i>n
+  <div class="index">
+    
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.bottom {
+.index {
   
 }
 

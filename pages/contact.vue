@@ -1,5 +1,5 @@
 <template>
-  <div class="top">
+  <div class="contact">
 
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.bottom {
+.contact {
   
 }
 
