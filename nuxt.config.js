@@ -80,7 +80,7 @@ export default {
       },
       order: 'cssnanoLast'
     },
-    vendor: ['vue-lazyload'],
+    vendor: ['vue-lazyload', 'element-ui'],
     html:{
       minify:{
         collapseBooleanAttributes: true,
@@ -104,6 +104,7 @@ export default {
     '~assets/fonts/roboto/roboto.css',
     'swiper/swiper-bundle.css',
     'animate.css/animate.css',
+    'element-ui/lib/theme-chalk/index.css'
   ],
   /*@nuxtjs/style-resources*/
   styleResources: {
@@ -120,6 +121,7 @@ export default {
   plugins: [
     '~/plugins/vue-awesome-swiper',
     { src: '~/plugins/vue-lazyload', ssr: true },
+    '~plugins/element-ui'
   ],
   modules: [
     '@nuxtjs/pwa',

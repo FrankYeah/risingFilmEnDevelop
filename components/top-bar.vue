@@ -166,7 +166,7 @@ export default {
     top: 32px;
     right: 32px;
     width: 52px;
-    height: 21.5px;
+    height: 52px;
     cursor: pointer;
 
     &:hover {
