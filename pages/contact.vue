@@ -31,14 +31,15 @@
             <button class="contact-btn">Submit</button>
           </div>
         </form>
-        <div v-if="isShowPopup" @click="closePopup" class="contact-popup">
-          <div @click.stop class="contact-popup-box">
-            <img class="contact-popup-img" v-lazy="require('@/assets/img/icon/success.png')" alt="success">
-            <div class="contact-popup-title">Success</div>
-            <div class="contact-popup-desc">The form has been sent successfully, someone will contact you later</div>
-            <button @click="closePopup" class="contact-popup-btn">Confirm</button>
-          </div>
-        </div>
+        
+      </div>
+    </div>
+    <div v-if="isShowPopup" @click="closePopup" class="contact-popup">
+      <div @click.stop class="contact-popup-box">
+        <img class="contact-popup-img" v-lazy="require('@/assets/img/icon/success.png')" alt="success">
+        <div class="contact-popup-title">Success</div>
+        <div class="contact-popup-desc">The form has been sent successfully, someone will contact you later</div>
+        <button @click="closePopup" class="contact-popup-btn">Confirm</button>
       </div>
     </div>
   </div>
@@ -260,7 +261,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 60px 45px 50px;
+      padding: 60px 32px 48px;
       background-color: #29292A;
     }
 
@@ -274,8 +275,11 @@ export default {
     }
 
     &-desc {
+      max-width: 280px;
       margin-top: 8px;
       font-size: 14px;
+      text-align: center;
+      line-height: 1.2;
       opacity: 0.5;
     }
 
@@ -301,30 +305,36 @@ export default {
 @media( max-width: 1023px ){
 
 .contact {
-  
+  height: 100%;
+  margin-top: 118px;
 
   &-box {
-    
+    position: initial;
+    transform: translate(0px);
   }
 
   &-row {
-    
+    flex-direction: column;
+    align-items: initial;
   }
 
   &-row-inner {
-    
+    margin-bottom: 67px;
   }
 
   &-line {
-    
+    width: 100px;
   }
 
   &-head {
-    
+    margin: 0px 0px 0px 17px;
+    font-size: 48px;
   }
 
   &-form {
-    
+    max-width: 340px;
+    margin: auto;
+    padding: 0px 24px;
   }
 
   &-input {
@@ -340,7 +350,8 @@ export default {
   }
 
   &-textarea {
-    
+    height: 180px;
+    margin-bottom: 46px;
 
     &::placeholder {
       
@@ -352,15 +363,18 @@ export default {
   }
 
   &-btn-box {
-    
+    position: relative;
+    flex-direction: column;
   }
 
   &-error-text {
-    
+    position: absolute;
+    top: -30px;
   }
 
   &-btn {
-    
+    width: 100%;
+    margin-bottom: 54px;
   }
 
   &-popup {

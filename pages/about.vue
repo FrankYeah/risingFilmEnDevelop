@@ -11,7 +11,11 @@
         <div>Business Models</div>
       </div>
       <div class="about-pre3">Combining resources, creativity, and business models, Create a new bureau of film and television in Taiwan.</div>
+    </boxWidth>
+    <div class="about-post-box">
       <img class="about-post" :src="require('@/assets/img/about/post.jpg')" alt="post">
+    </div>
+    <boxWidth>
       <div class="about-desc">In 2021, he will invest in the production of "Youth Killing Love" directed by He Weiting, Won the Golden Horse Award and was shortlisted for five awards.</div>
       <div class="about-title">OUR TEAM</div>
       <div class="about-intro">
@@ -130,9 +134,15 @@ export default {
     line-height: 1.3;
   }
 
+  &-post-box {
+    text-align: center;
+  }
+
   &-post {
+    max-width: 1000px;
     width: 100%;
     margin-top: 90px;
+    text-align: center;
   }
 
   &-desc {
@@ -250,6 +260,10 @@ export default {
   }
 
   &-pre3 {
+    
+  }
+
+  &-post-box {
     
   }
 
