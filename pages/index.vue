@@ -52,7 +52,7 @@ export default {
   &-sub {
     margin-top: 20px;
     font-size: 24px;
-    opacity: 0.75;
+    opacity: 0.5;
   }
   
 }
@@ -60,14 +60,15 @@ export default {
 @media( max-width: 1023px ){
 
 .index {
-  
+  width: 100%;
 
   &-head {
-    
+    font-size: 36px;
   }
 
   &-sub {
-    
+    margin-top: 10px;
+    font-size: 18px;
   }
   
 }

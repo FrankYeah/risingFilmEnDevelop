@@ -58,7 +58,7 @@ export default {
   }
 
   &-line {
-    
+    margin-top: 4px;
   }
   
 }

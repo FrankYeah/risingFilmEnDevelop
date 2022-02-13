@@ -314,16 +314,17 @@ export default {
   
 
   &-logo {
-    
+    top: 29px;
+    left: 20px;
 
     & img {
-      
     }
 
   }
 
   &-menu {
-    
+    top: 29px;
+    right: 20px;
   }
 
   &-row {
@@ -346,7 +347,7 @@ export default {
     
 
     &-row {
-      
+      font-size: 14px;
 
       & img {
         
@@ -354,11 +355,12 @@ export default {
     }
 
     &-lang {
-      
+
     }
 
     &-link {
-      
+      font-size: 48px;
+      line-height: 1.1;
 
       & a:first-child {
         
@@ -366,7 +368,8 @@ export default {
     }
 
     &-href {
-      
+      width: 270px !important;
+      padding: 24px 0px;
     }
 
     &-href-light {
@@ -374,7 +377,7 @@ export default {
     }
 
     &-href-dark {
-      
+      opacity: 1;
     }
 
     &-href1 {
@@ -398,7 +401,7 @@ export default {
     }
 
     &-line-show {
-      ;
+      background-color: transparent;
     }
 
     &-line-hide {

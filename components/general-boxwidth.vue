@@ -39,7 +39,7 @@ export default {
 @media( max-width: 1023px ){
 
 .boxwidth {
-  
+  padding: 0px 27px;
 }
 
 }

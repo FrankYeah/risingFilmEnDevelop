@@ -38,7 +38,7 @@ export default {
 @media( max-width: 1023px ){
 
 .headtop {
-  
+  padding-top: 80px;
 }
 
 }

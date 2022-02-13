@@ -64,13 +64,14 @@ export default {
 
   &-copyright {
     font-size: 14px;
+    opacity: 0.7;
   }
 }
 
 @media( max-width: 1023px ){
 
 .bottom {
-  
+  padding: 0px 16px;
 
   &-social {
 
@@ -81,7 +82,9 @@ export default {
   }
 
   &-copyright {
-    
+    width: 164px;
+    line-height: 1.2;
+    text-align: right;
   }
 }
 
