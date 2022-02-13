@@ -10,8 +10,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -25,8 +23,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -40,8 +36,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -55,8 +49,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -70,8 +62,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -85,8 +75,6 @@ export const teamList = [
       awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     },
     {
@@ -100,8 +88,6 @@ export const teamList = [
         awards: [
         { name: 'award name1' },
         { name: 'award name2' },
-        { name: 'award name3' },
-        { name: 'award name4' },
       ]
     }
   ]

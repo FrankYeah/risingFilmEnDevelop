@@ -34,7 +34,20 @@ export default {
     }
   },
   watch: {
-    
+    isShowPopup: {
+      handler: function(change) {
+        if (change) {
+          // 點開手機版 popup 時，要避免畫面滑動
+          let mo = function (e) { e.preventDefault() }
+          document.body.style.overflow='hidden'
+          document.addEventListener('touchmove', mo, false)
+        } else {
+          let mo = function (e) { e.preventDefault() } 
+          document.body.style.overflow = ''
+          document.removeEventListener('touchmove', mo, false)
+        }
+      },
+    },
   }
 }
 </script>
@@ -80,11 +93,16 @@ export default {
   
 
   &-box {
-    
+    width: calc(100% - 54px);
+    max-height: calc(100% - 92px);
+    margin: 0px 27px;
+    padding: 32px 16px;
+    overflow-y: scroll;
   }
 
   &-close {
-    
+    top: 32px;
+    right: 20px;
   }
 }
 

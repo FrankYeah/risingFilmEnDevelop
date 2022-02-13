@@ -249,18 +249,27 @@ export default {
 @media( max-width: 1023px ){
 
 .about {
-  
+  padding-bottom: 0px;
 
   &-pre1 {
-    
+    margin-top: 19px;
+    font-size: 20px;
   }
 
   &-pre2 {
-    
+    flex-direction: column;
+    margin-top: 17px;
+    font-size: 24px;
+
+    & div {
+      margin-bottom: 11px;
+    }
   }
 
   &-pre3 {
-    
+    width: 100%;
+    margin-top: 16px;
+    font-size: 14px;
   }
 
   &-post-box {
@@ -268,73 +277,84 @@ export default {
   }
 
   &-post {
-    
+    margin-top: 42px;
   }
 
   &-desc {
-    
+    width: 100%;
+    margin-top: 31px;
   }
 
   &-title {
-    
+    margin: 60px 0px 3px;
+    font-size: 24px;
   }
 
   &-intro {
-    
+    width: 100%;
   }
 
   &-team-box {
-    
+    margin-top: 32px;
   }
 
   &-person {
-    
+    width: 130px;
   }
 
   &-name {
-    
+    font-size: 18px;
   }
 
   &-name-title {
-    
+    width: 130px;
   }
 
   &-partner-title {
-    
+    font-size: 24px;
+    margin: 32px 0px 50px;
   }
 
   &-partner-box {
-    
+    width: 100%;
   }
 
   &-partner {
-    
+    width: 132px;
   }
 
   &-popup {
 
     &-row {
-      
+      flex-direction: column;
+      align-items: center;
     }
 
     &-person {
-      
+      width: 157px;
+      align-items: center;
+      margin-right: 0px;
     }
 
     &-title {
-      
+      margin-top: 18px;
+      text-align: center;
     }
 
     &-sub {
-      
+      margin-top: 2px;
+      text-align: center;
+      font-size: 18px;
+      font-style: italic;
     }
 
     &-desc {
-      
+      margin-top: 13px;
     }
 
     &-awards {
-      
+      font-size: 18px;
+      margin: 24px 0px 18px;
     }
 
     &-award {
