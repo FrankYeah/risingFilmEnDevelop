@@ -109,12 +109,28 @@ export default {
             slidesPerView: 2,
             spaceBetween: 30,
           },
-          340: {
-            slidesPerView: 1,
+          620: {
+            slidesPerView: 2,
             spaceBetween: 0,
           },
+          500: {
+            slidesPerView: 'auto',
+            spaceBetween: -120,
+          },
+          400: {
+            slidesPerView: 'auto',
+            spaceBetween: -60,
+          },
+          340: {
+            slidesPerView: 'auto',
+            spaceBetween: -30,
+          },
+          340: {
+            slidesPerView: 'auto',
+            spaceBetween: -20,
+          },
           320: {
-            slidesPerView: 1,
+            slidesPerView: 'auto',
             spaceBetween: 0,
           }
         }
@@ -142,11 +158,11 @@ export default {
             spaceBetween: 30,
           },
           340: {
-            slidesPerView: 1,
-            spaceBetween: 0,
+            slidesPerView: 2,
+            spaceBetween: -30,
           },
           320: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 0,
           }
         }
@@ -286,11 +302,11 @@ export default {
 .develop {
 
   &-title-box {
-    
+    margin-left: 27px;
   }
 
   &-swiper-box {
-    
+    margin: 92px 0px 86px 27px;
   }
 
   &-swiper {
@@ -298,7 +314,7 @@ export default {
   }
 
   &-slide {
-    
+    padding-bottom: 32px;
   }
 
   .swiper-scrollbar {
@@ -310,11 +326,12 @@ export default {
   }
 
   &-post {
-    
+    width: 286px;
   }
 
   &-title {
-    
+    margin-top: 10px;
+    font-size: 18px;
   }
 
   &-date {
@@ -324,31 +341,34 @@ export default {
   &-popup {
 
     &-row {
-      
+      flex-direction: column;
+      align-items: center;
     }
 
     &-post {
-      
+      width: 160px;
+      margin-right: 0px;
     }
 
     &-box {
-      
+      width: 100%;
     }
 
     &-title {
-      
+      margin-top: 30px;
+      text-align: center;
     }
 
     &-date {
-      
+      text-align: center;
     }
 
     &-desc {
-      
+      margin-top: 12px;
     }
 
     &-swiper-box {
-      
+      margin-top: 32px;
     }
 
     &-swiper {
@@ -360,15 +380,15 @@ export default {
     }
 
     &-stage {
-      
+      width: 120px;
     }
 
     &-awards {
-      
+      justify-content: space-between;
     }
 
     &-award {
-      
+      margin: 0px 0px 10px 0px;
     }
   }
   

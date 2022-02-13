@@ -96,7 +96,7 @@ export default {
     width: calc(100% - 54px);
     max-height: calc(100% - 92px);
     margin: 0px 27px;
-    padding: 32px 16px;
+    padding: 32px 16px 23px;
     overflow-y: scroll;
   }
 
