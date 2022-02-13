@@ -34,26 +34,20 @@
           v-lazy="partner.link" alt="person"
         >
       </div>
-      <div v-if="isPersonPopup"
-        @click="isPersonPopup = false" 
-        class="about-popup"
-      >
-        <div @click.stop class="about-popup-box">
-          <img @click="isPersonPopup = false" class="about-popup-close" :src="require('@/assets/img/icon/close.png')" alt="close">
-          <div class="about-popup-row">
-            <img class="about-popup-person" :src="selectedPerson.person2" alt="post">
-            <div>
-              <div class="about-popup-title">{{ selectedPerson.name }}</div>
-              <div class="about-popup-sub">{{ selectedPerson.title }}</div>
-              <div class="about-popup-desc">{{ selectedPerson.desc }}</div>
-              <div class="about-popup-awards">Awards</div>
-              <div class="about-popup-award"
-                v-for="(award, index) in selectedPerson.awards"
-                :key="index">{{ award.name }}</div>
-            </div>
+      <generalPopup :isShowPopup="isPersonPopup" @switchPopup="switchPopup">
+        <div class="about-popup-row">
+          <img class="about-popup-person" :src="selectedPerson.person2" alt="post">
+          <div>
+            <div class="about-popup-title">{{ selectedPerson.name }}</div>
+            <div class="about-popup-sub">{{ selectedPerson.title }}</div>
+            <div class="about-popup-desc">{{ selectedPerson.desc }}</div>
+            <div class="about-popup-awards">Awards</div>
+            <div class="about-popup-award"
+              v-for="(award, index) in selectedPerson.awards"
+              :key="index">{{ award.name }}</div>
           </div>
         </div>
-      </div>
+      </generalPopup>
     </boxWidth>
   </div>
 </template>
@@ -73,7 +67,8 @@ export default {
   components: {
     boxWidth: require('~/components/general-boxwidth.vue').default,
     headTop: require('~/components/general-headtop.vue').default,
-    generalTitle: require('~/components/general-title.vue').default
+    generalTitle: require('~/components/general-title.vue').default,
+    generalPopup: require('~/components/general-popup.vue').default
   },
   props: {
     
@@ -99,6 +94,9 @@ export default {
     selectPerson(index) {
       this.isPersonPopup = true
       this.selectedPerson = teamList[index]
+    },
+    switchPopup (isPopup) {
+      this.isPersonPopup = isPopup
     }
   },
   watch: {
@@ -199,36 +197,6 @@ export default {
   }
 
   &-popup {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(23, 23, 25, 0.8);
-    z-index: 2;
-
-    &-box {
-      position: relative;
-      width: 968px;
-      padding: 32px;
-      background-color: #29292A;
-    }
-
-    &-close {
-      position: absolute;
-      top: 32px;
-      right: 32px;
-      width: 39px;
-      height: 39px;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.8;
-      }
-    }
 
     &-row {
       display: flex;

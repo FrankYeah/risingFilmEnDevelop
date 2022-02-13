@@ -142,7 +142,7 @@ export default {
   top: 0px;
   left: 0px;
   width: calc(100% - 64px);
-  z-index: 1;
+  z-index: 2;
 
   &-logo {
     position: fixed;
@@ -233,7 +233,7 @@ export default {
     &-link {
       display: flex;
       flex-direction: column;
-      font-size: 54px;
+      font-size: 72px;
 
       & a:first-child {
         margin-top: 20px;
@@ -259,23 +259,19 @@ export default {
     }
 
     &-href1 {
-      width: 173px;
+      width: 223px;
     }
 
     &-href2 {
-      width: 378px;
-    }
-
-    &-href3 {
-      width: 311px;
+      width: 430px;
     }
 
     &-href4 {
-      width: 520px;
+      width: 580px;
     }
 
     &-href5 {
-      width: 228px;
+      width: 260px;
     }
 
     &-line {
@@ -294,23 +290,19 @@ export default {
     }
 
     &-line1 {
-      width: 150px;
+      width: 200px;
     }
 
     &-line2 {
-      width: 326px;
-    }
-
-    &-line3 {
-      width: 270px;
+      width: 430px;
     }
 
     &-line4 {
-      width: 440px;
+      width: 580px;
     }
 
     &-line5 {
-      width: 200px;
+      width: 260px;
     }
   }
   
