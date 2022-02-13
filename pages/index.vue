@@ -57,5 +57,22 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.index {
+  
+
+  &-head {
+    
+  }
+
+  &-sub {
+    
+  }
+  
+}
+
+}
+
 
 </style>

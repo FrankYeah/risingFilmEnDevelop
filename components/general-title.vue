@@ -49,5 +49,21 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.title {
+
+  &-text {
+
+  }
+
+  &-line {
+    
+  }
+  
+}
+
+}
+
 
 </style>

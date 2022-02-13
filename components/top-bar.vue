@@ -308,5 +308,123 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.top {
+  
+
+  &-logo {
+    
+
+    & img {
+      
+    }
+
+  }
+
+  &-menu {
+    
+  }
+
+  &-row {
+    
+
+    & img {
+      
+    }
+    
+    & img:first-child {
+      
+    }
+
+    & img:last-child {
+      
+    }
+  }
+
+  &-popup {
+    
+
+    &-row {
+      
+
+      & img {
+        
+      }
+    }
+
+    &-lang {
+      
+    }
+
+    &-link {
+      
+
+      & a:first-child {
+        
+      }
+    }
+
+    &-href {
+      
+    }
+
+    &-href-light {
+      
+    }
+
+    &-href-dark {
+      
+    }
+
+    &-href1 {
+      
+    }
+
+    &-href2 {
+      
+    }
+
+    &-href4 {
+      
+    }
+
+    &-href5 {
+      
+    }
+
+    &-line {
+      
+    }
+
+    &-line-show {
+      ;
+    }
+
+    &-line-hide {
+      
+    }
+
+    &-line1 {
+      
+    }
+
+    &-line2 {
+      
+    }
+
+    &-line4 {
+      
+    }
+
+    &-line5 {
+      
+    }
+  }
+  
+}
+
+}
+
 
 </style>

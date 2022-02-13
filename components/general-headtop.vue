@@ -35,5 +35,13 @@ export default {
   padding-top: 150px;
 }
 
+@media( max-width: 1023px ){
+
+.headtop {
+  
+}
+
+}
+
 
 </style>

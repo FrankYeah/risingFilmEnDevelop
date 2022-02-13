@@ -281,5 +281,100 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.develop {
+
+  &-title-box {
+    
+  }
+
+  &-swiper-box {
+    
+  }
+
+  &-swiper {
+
+  }
+
+  &-slide {
+    
+  }
+
+  .swiper-scrollbar {
+    
+  }
+
+  .swiper-scrollbar-drag {
+
+  }
+
+  &-post {
+    
+  }
+
+  &-title {
+    
+  }
+
+  &-date {
+    
+  }
+
+  &-popup {
+
+    &-row {
+      
+    }
+
+    &-post {
+      
+    }
+
+    &-box {
+      
+    }
+
+    &-title {
+      
+    }
+
+    &-date {
+      
+    }
+
+    &-desc {
+      
+    }
+
+    &-swiper-box {
+      
+    }
+
+    &-swiper {
+
+    }
+
+    &-slide {
+
+    }
+
+    &-stage {
+      
+    }
+
+    &-awards {
+      
+    }
+
+    &-award {
+      
+    }
+  }
+  
+}
+
+}
+
 
 </style>

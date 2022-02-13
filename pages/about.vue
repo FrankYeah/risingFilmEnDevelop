@@ -236,5 +236,101 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.about {
+  
+
+  &-pre1 {
+    
+  }
+
+  &-pre2 {
+    
+  }
+
+  &-pre3 {
+    
+  }
+
+  &-post {
+    
+  }
+
+  &-desc {
+    
+  }
+
+  &-title {
+    
+  }
+
+  &-intro {
+    
+  }
+
+  &-team-box {
+    
+  }
+
+  &-person {
+    
+  }
+
+  &-name {
+    
+  }
+
+  &-name-title {
+    
+  }
+
+  &-partner-title {
+    
+  }
+
+  &-partner-box {
+    
+  }
+
+  &-partner {
+    
+  }
+
+  &-popup {
+
+    &-row {
+      
+    }
+
+    &-person {
+      
+    }
+
+    &-title {
+      
+    }
+
+    &-sub {
+      
+    }
+
+    &-desc {
+      
+    }
+
+    &-awards {
+      
+    }
+
+    &-award {
+      
+    }
+  }
+  
+}
+
+}
+
 
 </style>

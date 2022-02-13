@@ -67,5 +67,25 @@ export default {
   }
 }
 
+@media( max-width: 1023px ){
+
+.bottom {
+  
+
+  &-social {
+
+    & img {
+      
+    }
+      
+  }
+
+  &-copyright {
+    
+  }
+}
+
+}
+
 
 </style>

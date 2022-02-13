@@ -298,6 +298,99 @@ export default {
   
 }
 
+@media( max-width: 1023px ){
+
+.contact {
+  
+
+  &-box {
+    
+  }
+
+  &-row {
+    
+  }
+
+  &-row-inner {
+    
+  }
+
+  &-line {
+    
+  }
+
+  &-head {
+    
+  }
+
+  &-form {
+    
+  }
+
+  &-input {
+    
+
+    &::placeholder {
+      
+    }
+  }
+
+  &-select {
+    
+  }
+
+  &-textarea {
+    
+
+    &::placeholder {
+      
+    }
+  }
+
+  &-nofill {
+    
+  }
+
+  &-btn-box {
+    
+  }
+
+  &-error-text {
+    
+  }
+
+  &-btn {
+    
+  }
+
+  &-popup {
+    
+
+    &-box {
+      
+    }
+
+    &-img {
+      
+    }
+
+    &-title {
+      
+    }
+
+    &-desc {
+      
+    }
+
+    &-btn {
+      
+    }
+  }
+  
+}
+
+}
+
 
 </style>
 
@@ -355,5 +448,49 @@ export default {
     color: white;
     font-weight: 300;
   }
+
+@media( max-width: 1023px ){
+
+.contact-select .el-select {
+  
+  }
+
+  .contact-select .el-select .el-input__inner {
+    
+  }
+
+  .contact-select .el-select .el-input__inner::placeholder {
+    
+  }
+
+  .el-popper .popper__arrow::after {
+    
+  }
+
+  .el-popper .popper__arrow {
+    
+  }
+
+  .el-select-dropdown {
+    
+  }
+
+  .el-select-dropdown__list {
+    
+  }
+
+  .el-select-dropdown__item {
+    
+  }
+
+  .el-select-dropdown__item:hover {
+    
+  }
+
+  .el-select-dropdown__item.selected {
+    
+  }
+
+}
 
 </style>

@@ -74,5 +74,21 @@ export default {
   }
 }
 
+@media( max-width: 1023px ){
+
+.popup {
+  
+
+  &-box {
+    
+  }
+
+  &-close {
+    
+  }
+}
+
+}
+
 
 </style>
