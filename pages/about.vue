@@ -34,20 +34,22 @@
           v-lazy="partner.link" alt="person"
         >
       </div>
-      <div class="about-popup">
-        <div class="about-popup-box">
-          <img class="about-popup-close" :src="require('@/assets/img/about/post.jpg')" alt="post">
+      <div v-if="isPersonPopup"
+        @click="isPersonPopup = false" 
+        class="about-popup"
+      >
+        <div @click.stop class="about-popup-box">
+          <img @click="isPersonPopup = false" class="about-popup-close" :src="require('@/assets/img/icon/close.png')" alt="close">
           <div class="about-popup-row">
-            <img class="about-popup-person" :src="require('@/assets/img/about/post.jpg')" alt="post">
+            <img class="about-popup-person" :src="selectedPerson.person2" alt="post">
             <div>
-              <div class="about-popup-title">Eliza CHIU </div>
-              <div class="about-popup-sub">Marketing Director </div>
-              <div class="about-popup-desc">She has been in the industry for many years, and has accumulated early development, film and television co-production, visual design and publicity coordination,
-Practical experience in the whole industry chain such as the main creative broker, good at comprehensively integrating the production process, connecting the previous, middle and late stages,
-Focusing on creating a precise and refined market strategy, it has experienced more than 110 film and television works.</div>
+              <div class="about-popup-title">{{ selectedPerson.name }}</div>
+              <div class="about-popup-sub">{{ selectedPerson.title }}</div>
+              <div class="about-popup-desc">{{ selectedPerson.desc }}</div>
               <div class="about-popup-awards">Awards</div>
-              <div class="about-popup-award">《Award name》</div>
-              <div class="about-popup-award">《Award name》</div>
+              <div class="about-popup-award"
+                v-for="(award, index) in selectedPerson.awards"
+                :key="index">{{ award.name }}</div>
             </div>
           </div>
         </div>
@@ -81,7 +83,13 @@ export default {
       teamList: teamList,
       partnerList: partnerList,
       isPersonPopup: false,
-      selectedPerson: {}
+      selectedPerson: {
+        name: '',
+        title: '',
+        person2: require('@/assets/img/about/Eliza2.png'),
+        desc: '',
+        awards: []
+      }
     }
   },
   computed: {
@@ -191,42 +199,70 @@ export default {
   }
 
   &-popup {
-
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(23, 23, 25, 0.8);
+    z-index: 2;
 
     &-box {
-
+      position: relative;
+      width: 968px;
+      padding: 32px;
+      background-color: #29292A;
     }
 
     &-close {
-      
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      width: 39px;
+      height: 39px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
     }
 
     &-row {
-      
+      display: flex;
     }
 
     &-person {
-      
+      width: 275px;
+      margin-right: 36px;
     }
 
     &-title {
-      
+      font-size: 24px;
     }
 
     &-sub {
-      
+      margin-top: 12px;
+      opacity: 0.5;
     }
 
     &-desc {
-      
+      margin-top: 24px;
+      line-height: 1.3;
+      font-size: 14px;
+      opacity: 0.5;
     }
 
     &-awards {
-      
+      margin: 32px 0px 12px;
     }
 
     &-award {
-      
+      margin-bottom: 8px;
+      font-size: 14px;
+      opacity: 0.5;
     }
   }
   
