@@ -388,6 +388,8 @@ export default {
     }
 
     &-award {
+      max-width: 180px;
+      width: 45%;
       margin: 0px 0px 10px 0px;
     }
   }

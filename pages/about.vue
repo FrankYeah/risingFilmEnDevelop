@@ -295,11 +295,13 @@ export default {
   }
 
   &-team-box {
+    max-width: 180px;
+    width: 50%;
     margin-top: 32px;
   }
 
   &-person {
-    width: 130px;
+    width: 90%;
   }
 
   &-name {
@@ -308,6 +310,7 @@ export default {
 
   &-name-title {
     width: 130px;
+    margin: auto;
   }
 
   &-partner-title {
@@ -320,7 +323,8 @@ export default {
   }
 
   &-partner {
-    width: 132px;
+    max-width: 180px;
+    width: 45%;
   }
 
   &-popup {
