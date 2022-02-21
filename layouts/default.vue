@@ -4,7 +4,8 @@
     <div class="default-setting">
       <nuxt/>
     </div>
-    
+
+    <loadingCover v-if="isLoading" />
     <bottomBar/>
   </div>
 </template>
@@ -14,14 +15,15 @@
 export default {
   components: {
     topBar: require('~/components/top-bar.vue').default,
-    bottomBar: require('~/components/bottom-bar.vue').default, 
+    bottomBar: require('~/components/bottom-bar.vue').default,
+    loadingCover: require('~/components/loading-cover.vue').default,
   },
   props: {
 
   },
   data () {
     return {
-
+      isLoading: false
     }
   },
   mounted () {
@@ -34,7 +36,15 @@ export default {
 
   },
   watch: {
-    
+    '$route.name': {
+      handler: function() {
+        this.isLoading = true
+        setTimeout(() => {
+          this.isLoading = false
+        }, 3000)
+      },
+      immediate: true
+    }
   }
 }
 </script>
