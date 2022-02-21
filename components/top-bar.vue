@@ -15,53 +15,60 @@
     
 
     <!-- popup -->
-    <div v-if="isShowMenu" class="top-popup">
-      <div class="top-popup-row">
-        <div>
-          <span class="top-popup-lang" style="opacity: 0.3;">中</span>
-          ｜
-          <span>EN</span>
+    <transition name="fade">
+      <div v-if="isShowMenu"
+      :class="[`top-popup`]"
+      >
+        <div class="top-popup-row">
+          <div class="top-popup-animate5">
+            <span class="top-popup-lang" style="opacity: 0.3;">中</span>
+            ｜
+            <span>EN</span>
+          </div>
+          <img @click="isShowMenu = false"
+            class="top-popup-animate5"
+            :src="require('@/assets/img/icon/close.png')"
+            alt="close"
+          >
         </div>
-        <img @click="isShowMenu = false"
-          :src="require('@/assets/img/icon/close.png')"
-          alt="close"
-        >
+        <div class="top-popup-link">
+          <router-link to="/about">
+            <div @click="isShowMenu = false"
+              @mouseover="hoverLink('about')" 
+              @mouseleave="leaveLink" 
+              :class="[`top-popup-href top-popup-href1 top-popup-animate1`,
+              {'top-popup-href-dark': !isHover.about},
+              {'top-popup-href-light': isAllLight}]"
+            >About</div>
+            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
+          </router-link>
+          <router-link to="/development">
+            <div @click="isShowMenu = false"
+              @mouseover="hoverLink('development')" 
+              @mouseleave="leaveLink" 
+              :class="['top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
+            >Development</div>
+            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]"></div>
+          </router-link>
+          <router-link to="/virtual">
+            <div @click="isShowMenu = false"
+              @mouseover="hoverLink('virtual')" 
+              @mouseleave="leaveLink" 
+              :class="['top-popup-href top-popup-href4 top-popup-animate3', {'top-popup-href-dark': !isHover.virtual}, {'top-popup-href-light': isAllLight}]"
+            >Virtual Production</div>
+            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line4': isHover.virtual}]"></div>
+          </router-link>
+          <router-link to="/contact">
+            <div @click="isShowMenu = false"
+              @mouseover="hoverLink('contact')" 
+              @mouseleave="leaveLink" 
+              :class="['top-popup-href top-popup-href5 top-popup-animate4', {'top-popup-href-dark': !isHover.contact}, {'top-popup-href-light': isAllLight}]"
+            >Contact</div>
+            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line5': isHover.contact}]"></div>
+          </router-link>
+        </div>
       </div>
-      <div class="top-popup-link">
-        <router-link to="/about">
-          <div @click="isShowMenu = false"
-            @mouseover="hoverLink('about')" 
-            @mouseleave="leaveLink" 
-            :class="['top-popup-href top-popup-href1', {'top-popup-href-dark': !isHover.about}, {'top-popup-href-light': isAllLight}]"
-          >About</div>
-          <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
-        </router-link>
-        <router-link to="/development">
-          <div @click="isShowMenu = false"
-            @mouseover="hoverLink('development')" 
-            @mouseleave="leaveLink" 
-            :class="['top-popup-href top-popup-href2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
-          >Development</div>
-          <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]"></div>
-        </router-link>
-        <router-link to="/virtual">
-          <div @click="isShowMenu = false"
-            @mouseover="hoverLink('virtual')" 
-            @mouseleave="leaveLink" 
-            :class="['top-popup-href top-popup-href4', {'top-popup-href-dark': !isHover.virtual}, {'top-popup-href-light': isAllLight}]"
-          >Virtual Production</div>
-          <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line4': isHover.virtual}]"></div>
-        </router-link>
-        <router-link to="/contact">
-          <div @click="isShowMenu = false"
-            @mouseover="hoverLink('contact')" 
-            @mouseleave="leaveLink" 
-            :class="['top-popup-href top-popup-href5', {'top-popup-href-dark': !isHover.contact}, {'top-popup-href-light': isAllLight}]"
-          >Contact</div>
-          <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line5': isHover.contact}]"></div>
-        </router-link>
-    </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -199,7 +206,7 @@ export default {
 
   &-popup {
     position: fixed;
-    left: 0px;
+    right: 0px;
     top: 0px;
     width: calc(100% - 64px);
     height: 100vh;
@@ -274,6 +281,41 @@ export default {
       width: 260px;
     }
 
+    &-animate1 {
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.3s;
+      animation-fill-mode: backwards;
+    }
+
+    &-animate2 {
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.4s;
+      animation-fill-mode: backwards;
+    }
+
+    &-animate3 {
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.5s;
+      animation-fill-mode: backwards;
+    }
+
+    &-animate4 {
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.6s;
+      animation-fill-mode: backwards;
+    }
+
+    &-animate5 {
+      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.7s;
+      animation-fill-mode: backwards;
+    }
+
     &-line {
       width: 1px;
       height: 1.5px;
@@ -307,6 +349,23 @@ export default {
   }
   
 }
+
+// 動態
+
+// bg 動態
+.fade-enter-active {
+  transition: width .3s;
+}
+
+.fade-enter {
+  width: 0px;
+}
+
+.fade-leave {
+  width: 0px;
+}
+
+
 
 @media( max-width: 1023px ){
 
