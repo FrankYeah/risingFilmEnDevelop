@@ -7,6 +7,9 @@
           <div class="contact-head">Contact</div>
         </div>
         <form @submit.prevent="handleSubmit()"
+          method="POST"
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf6FRXZuWT0Y1KeI1TVgUcbrCeRgTpCrkNPFwKsjAnveCYxZg/formResponse"
+          target="_blank"
           class="contact-form"
         >
           <input :class="['contact-input', {'contact-nofill': !isForm.name}]" v-model="name" @focus="focusInput('name')" type="text" placeholder="Name">
@@ -67,11 +70,13 @@ export default {
       mail: '',
       service: '',
       serviceOptions: [
-        { value: 'service 1' },
-        { value: 'service 2' },
-        { value: 'service 3' },
-        { value: 'service 4' }
+        { value: 'Development' },
+        { value: 'Production' },
+        { value: 'Virtual Production' },
+        { value: 'Others' }
       ],
+      // 英文：Development、Production、Virtual Production、Others
+      // 中文：開發、製作、虛擬製作、其他合作
       message: '',
       isForm: {
         name: true,
@@ -117,15 +122,34 @@ export default {
       if (!this.message) {
         this.isForm.message = false
       }
-      console.log('1')
       if(!this.name || !this.phone || !this.mail || !this.service || !this.message) {
         this.isPass = false
-        console.log('12')
         return
       }
-      console.log('123')
+
+      const formUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSf6FRXZuWT0Y1KeI1TVgUcbrCeRgTpCrkNPFwKsjAnveCYxZg/formResponse'
+      const queryString = require('query-string')
+      const q = queryString.stringifyUrl({
+        url: formUrl,
+        query: {
+          'entry.943479078': this.name,
+          'entry.851500943': this.phone,
+          'entry.1010778510': this.mail,
+          'entry.1848715513': this.service,
+          'entry.2049837030': this.message
+        }
+      })
+      this.$axios.post(q)
+      .then(response => {
+
+      })
+      .catch(error => {
+
+      })
+
       this.isPass = true
       this.isShowPopup = true
+
     },
     closePopup() {
       this.isShowPopup = false

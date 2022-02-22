@@ -55,10 +55,8 @@ export default {
     text-align: center;
     font-size: 64px;
     font-weight: 900;
-    text-shadow: 0 0 2px white;
     letter-spacing: 4px;
-    color: #171719;
-    -webkit-text-stroke: 1px white;
+    color: white;
   }
   
 }
