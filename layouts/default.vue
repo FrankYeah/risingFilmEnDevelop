@@ -69,6 +69,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+  letter-spacing: 0.05px;
 	vertical-align: baseline;
   scroll-behavior: smooth;
 }

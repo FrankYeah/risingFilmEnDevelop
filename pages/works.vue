@@ -15,7 +15,7 @@
           <div>Development</div>
           <div>Translating Taiwan's diverse cultural</div>
         </div>
-        <div class="develop-head-more">Learn More &gt;</div>
+        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -38,7 +38,7 @@
           <div>Production</div>
           <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
         </div>
-        <div class="develop-head-more">Learn More &gt;</div>
+        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -62,7 +62,7 @@
           <div>Other Works</div>
           <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
         </div>
-        <div class="develop-head-more">Learn More &gt;</div>
+        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -109,6 +109,21 @@
         </div>
       </div>
     </generalPopup>
+
+    <div v-if="isMorePopup" @click="isMorePopup = false" class="develop-popups">
+      <div @click.stop class="develop-popups-box">
+        <img @click="isMorePopup = false" class="develop-popups-close" :src="require('@/assets/img/icon/close.png')" alt="close">
+        <div class="develop-popups-head">台灣故事 國際觀眾</div>
+        <div class="develop-popups-text">
+          持續扶植影視人才、得獎導演、新銳導演
+          擴大故事來源至出版、劇本獎
+          手握近400部影視優先開發授權之作品
+          從開發、編劇與企劃開始，就導入虛擬製作思維
+          擴大影視敘事的格局與可能性
+          讓台灣作品持續登上國際舞台
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -140,6 +155,7 @@ export default {
       productionList: productionList,
       otherList: otherList,
       isPostPopup: false,
+      isMorePopup: false,
       selectedFilm: {
         post: require('@/assets/img/develop/EX1.png'),
         name: 'Terrorizers',
@@ -261,6 +277,9 @@ export default {
     },
     switchPopup (isPopup) {
       this.isPostPopup = isPopup
+    },
+    switchMorePopup (isPopup) {
+      this.isMorePopup = isPopup
     },
     scrollTo(position) {
       let tempId
@@ -458,6 +477,56 @@ export default {
     &-award {
       width: 120px;
       margin: 0px 24px 10px 0px;
+    }
+  }
+
+  &-popups {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(23, 23, 25, 0.8);
+    z-index: 2;
+
+    &-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 288px;
+      margin: 0px 27px;
+      padding: 84px 24px 56px;
+      background-color: #29292A;
+    }
+
+    &-close {
+      position: absolute;
+      top: 33px;
+      right: 19px;
+      width: 20px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &-head {
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    &-text {
+      margin-top: 24px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 32px;
+      
+      opacity: 0.5;
     }
   }
   
