@@ -43,31 +43,29 @@
             <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
           </router-link>
 
-          <!-- <router-link to="/development"> -->
           <div @click="isHover.developmentIn = true"
             @mouseover="hoverLink('development')"
             :class="['top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
-          >Development</div>
+          >Works</div>
           <div @click="closeMenu" @mouseover="hoverLink('development')" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]" ></div>
-          <!-- </router-link> -->
 
           <div v-if="isHover.developmentIn"
             @mouseover="hoverLink('development')"
             class="top-popup-href-s-box"
           >
-            <router-link to="/development">
+            <router-link to="/works#development">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s"
               >Development</div>
             </router-link>
-            <router-link to="/development#production">
+            <router-link to="/works#production">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s"
               >Production</div>
             </router-link>
-            <router-link to="/development#other">
+            <router-link to="/works#other">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s top-popup-href-s-last"
@@ -305,7 +303,7 @@ export default {
     }
 
     &-href2 {
-      width: 430px;
+      width: 230px;
     }
 
     &-href4 {
@@ -371,7 +369,7 @@ export default {
     }
 
     &-line2 {
-      width: 430px;
+      width: 210px;
     }
 
     &-line4 {

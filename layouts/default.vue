@@ -70,6 +70,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 
 /* HTML5 display-role reset for older browsers */

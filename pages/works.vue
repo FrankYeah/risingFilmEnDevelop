@@ -1,8 +1,8 @@
 <template>
-  <div class="develop">
+  <div id="development" class="develop">
     <div class="develop-title-box">
       <headTop>
-        <generalTitle :title="'Development'"></generalTitle>
+        <generalTitle :title="'Works'"></generalTitle>
       </headTop>
     </div>
     <div class="develop-swiper-box">
@@ -20,6 +20,44 @@
         <div class="swiper-scrollbar" slot="scrollbar"></div>
       </swiper>
     </div>
+
+
+productionproductionproductionproduction
+    <div id="production" class="develop-swiper-box">
+      <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
+        <swiper-slide class="develop-slide"
+          v-for="(develop, index) in developList"
+          :key="index"
+        >
+          <div @click="showPopup(index)">
+            <img class="develop-post" :src="develop.post" alt="post">
+            <div class="develop-title">{{ develop.name }}</div>
+            <div class="develop-date">{{ develop.date }}</div>
+          </div>
+        </swiper-slide>
+        <div class="swiper-scrollbar" slot="scrollbar"></div>
+      </swiper>
+    </div>
+
+otherotherotherother
+    <div id="other" class="develop-swiper-box">
+      <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
+        <swiper-slide class="develop-slide"
+          v-for="(develop, index) in developList"
+          :key="index"
+        >
+          <div @click="showPopup(index)">
+            <img class="develop-post" :src="develop.post" alt="post">
+            <div class="develop-title">{{ develop.name }}</div>
+            <div class="develop-date">{{ develop.date }}</div>
+          </div>
+        </swiper-slide>
+        <div class="swiper-scrollbar" slot="scrollbar"></div>
+      </swiper>
+    </div>
+
+
+
     <generalPopup :isShowPopup="isPostPopup" @switchPopup="switchPopup">
       <div class="develop-popup-row">
         <img class="develop-popup-post" :src="selectedFilm.post" alt="post">
@@ -169,6 +207,12 @@ export default {
       }
     }
   },
+  mounted() {
+    // this.scrollTo()
+    if(this.$route.hash != '') {
+      this.scrollTo()
+    }
+  },
   computed: {
 
   },
@@ -179,10 +223,21 @@ export default {
     },
     switchPopup (isPopup) {
       this.isPostPopup = isPopup
+    },
+    scrollTo() {
+      let tempId = this.$route.hash.substring(1, this.$route.hash.length)
+      document.getElementById(tempId).scrollIntoView({ behavior: 'smooth' })
     }
   },
   watch: {
-    
+    '$route': {
+      handler: function(route) {
+        if(this.$route.hash != '') {
+          this.scrollTo()
+        }
+      },
+      deep: true
+    },
   }
 }
 </script>
