@@ -14,13 +14,11 @@
     "@nuxtjs/pwa": "^3.0.0-beta.14",
     "@nuxtjs/sitemap": "^2.4.0",
     "animate.css": "^4.1.1",
-    "aos": "^2.3.4",
     "chokidar": "^3.4.0",
     "cross-env": "^7.0.3",
     "element-ui": "^2.15.6",
     "fibers": "^5.0.0",
     "har-validator": "^5.1.5",
-    "headroom.js": "^0.12.0",
     "imports-loader": "^3.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-start": "^2.7.1",
@@ -39,8 +37,7 @@
     "nuxt": "^2.7.1",
     "postcss": "^7.0.32",
     "sass-loader": "^7.1.0",
-    "vue-lazyload": "^1.3.3",
-    "wowjs": "^1.1.3"
+    "vue-lazyload": "^1.3.3"
   },
   "browserslist": [
     "> 1%",

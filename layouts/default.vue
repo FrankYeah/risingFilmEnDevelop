@@ -27,7 +27,9 @@ export default {
     }
   },
   mounted () {
-
+    let currentLang = (navigator.language||navigator.userLanguage||navigator.browserLanguage||navigator.systemLanguage).toLowerCase()
+    // currentLang == 'zh-tw'
+    // window.location.href('')
   },
   computed: {
 
