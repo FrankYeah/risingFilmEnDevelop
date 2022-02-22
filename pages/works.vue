@@ -6,6 +6,13 @@
       </headTop>
     </div>
     <div class="develop-swiper-box">
+      <div class="develop-head">
+        <div class="develop-head-row">
+          <div>Development</div>
+          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+        </div>
+        <div class="develop-head-more">Learn More &gt;</div>
+      </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
           v-for="(develop, index) in developList"
@@ -22,8 +29,15 @@
     </div>
 
 
-productionproductionproductionproduction
+
     <div id="production" class="develop-swiper-box">
+      <div class="develop-head">
+        <div class="develop-head-row">
+          <div>Production</div>
+          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+        </div>
+        <div class="develop-head-more">Learn More &gt;</div>
+      </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
           v-for="(develop, index) in developList"
@@ -39,8 +53,15 @@ productionproductionproductionproduction
       </swiper>
     </div>
 
-otherotherotherother
+
     <div id="other" class="develop-swiper-box">
+      <div class="develop-head">
+        <div class="develop-head-row">
+          <div>Other Works</div>
+          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+        </div>
+        <div class="develop-head-more">Learn More &gt;</div>
+      </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
           v-for="(develop, index) in developList"
@@ -251,7 +272,47 @@ export default {
   }
 
   &-swiper-box {
-    margin: 30px 0px 96px 13%;
+    margin: 30px 0px 140px 13%;
+
+    &:last-child {
+      margin: 30px 0px 94px 13%;
+    }
+  }
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 126px 34px 0px;
+    font-size: 14px;
+
+    &-row {
+      display: flex;
+      align-items: center;
+
+      & div:first-child {
+        margin-right: 36px;
+        font-size: 32px;
+        font-weight: 900;
+        opacity: 1;
+      }
+
+      & div:last-child {
+        width: 370px;
+        line-height: 1.2;
+        opacity: 0.5;
+      }
+    }
+
+    &-more {
+      opacity: 0.5;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
   }
 
   &-swiper {
