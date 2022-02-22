@@ -25,7 +25,7 @@
             ｜
             <span>EN</span>
           </div>
-          <img @click="isShowMenu = false"
+          <img @click="closeMenu"
             class="top-popup-animate5"
             :src="require('@/assets/img/icon/close.png')"
             alt="close"
@@ -33,38 +33,62 @@
         </div>
         <div class="top-popup-link">
           <router-link to="/about">
-            <div @click="isShowMenu = false"
+            <div @click="closeMenu"
               @mouseover="hoverLink('about')" 
-              @mouseleave="leaveLink" 
+              @mouseleave="leaveLink"
               :class="[`top-popup-href top-popup-href1 top-popup-animate1`,
               {'top-popup-href-dark': !isHover.about},
               {'top-popup-href-light': isAllLight}]"
             >About</div>
-            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
+            <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
           </router-link>
-          <router-link to="/development">
-            <div @click="isShowMenu = false"
-              @mouseover="hoverLink('development')" 
-              @mouseleave="leaveLink" 
-              :class="['top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
-            >Development</div>
-            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]"></div>
-          </router-link>
+
+          <!-- <router-link to="/development"> -->
+          <div @click="isHover.developmentIn = true"
+            @mouseover="hoverLink('development')"
+            :class="['top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
+          >Development</div>
+          <div @click="closeMenu" @mouseover="hoverLink('development')" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]" ></div>
+          <!-- </router-link> -->
+
+          <div v-if="isHover.developmentIn"
+            @mouseover="hoverLink('development')"
+            class="top-popup-href-s-box"
+          >
+            <router-link to="/development">
+              <div @click="closeMenu"
+                @mouseover="hoverLink('development')"
+                class="top-popup-href-s"
+              >Development</div>
+            </router-link>
+            <router-link to="/development#production">
+              <div @click="closeMenu"
+                @mouseover="hoverLink('development')"
+                class="top-popup-href-s"
+              >Production</div>
+            </router-link>
+            <router-link to="/development#other">
+              <div @click="closeMenu"
+                @mouseover="hoverLink('development')"
+                class="top-popup-href-s top-popup-href-s-last"
+              >Other Works</div>
+            </router-link>
+          </div>
           <router-link to="/virtual">
-            <div @click="isShowMenu = false"
+            <div @click="closeMenu"
               @mouseover="hoverLink('virtual')" 
               @mouseleave="leaveLink" 
               :class="['top-popup-href top-popup-href4 top-popup-animate3', {'top-popup-href-dark': !isHover.virtual}, {'top-popup-href-light': isAllLight}]"
             >Virtual Production</div>
-            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line4': isHover.virtual}]"></div>
+            <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line4': isHover.virtual}]"></div>
           </router-link>
           <router-link to="/contact">
-            <div @click="isShowMenu = false"
+            <div @click="closeMenu"
               @mouseover="hoverLink('contact')" 
               @mouseleave="leaveLink" 
               :class="['top-popup-href top-popup-href5 top-popup-animate4', {'top-popup-href-dark': !isHover.contact}, {'top-popup-href-light': isAllLight}]"
             >Contact</div>
-            <div @click="isShowMenu = false" :class="['top-popup-line', {'top-popup-line-show top-popup-line5': isHover.contact}]"></div>
+            <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line5': isHover.contact}]"></div>
           </router-link>
         </div>
       </div>
@@ -87,8 +111,9 @@ export default {
       isHover: {
         about: false,
         development: false,
+        developmentIn: false,
         virtual: false,
-        contact: false 
+        contact: false ,
       }
     }
   },
@@ -103,26 +128,36 @@ export default {
       switch (link) {
           case 'about':
             this.isHover.about = true
+            this.isHover.developmentIn = false
+            this.isHover.development = false
             break;
           case 'development':
             this.isHover.development = true
+            this.isHover.developmentIn = true
             break;
           case 'virtual':
             this.isHover.virtual = true
+            this.isHover.developmentIn = false
+            this.isHover.development = false
             break;
           case 'contact':
             this.isHover.contact = true
+            this.isHover.developmentIn = false
+            this.isHover.development = false
             break;
           default:
         }
-      
     },
     leaveLink() {
       this.isHover.about = false
       this.isHover.development = false
+      this.isHover.developmentIn = false
       this.isHover.virtual = false
       this.isHover.contact = false
-      
+    },
+    closeMenu() {
+      this.isShowMenu = false
+      this.leaveLink()
     }
   },
   watch: {
@@ -130,7 +165,7 @@ export default {
       handler: function() {
         this.isAllLight = false
         setTimeout(()=> {
-          if(!this.isHover.about && !this.isHover.development && !this.isHover.virtual && !this.isHover.contact) {
+          if(!this.isHover.about && !this.isHover.development && !this.isHover.developmentIn && !this.isHover.virtual && !this.isHover.contact) {
             this.isAllLight = true
           }
         }, 500)
@@ -346,6 +381,30 @@ export default {
     &-line5 {
       width: 260px;
     }
+
+    &-href-s-box {
+      display: flex;
+      padding: 7px 0px 45px;
+      font-style: italic;
+      font-size: 36px;
+
+      & a:first-child {
+        margin-top: 0px;
+      }
+    }
+
+    &-href-s {
+      padding-right: 60px;
+      opacity: 0.15;      
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-href-s-last {
+      padding-right: 0px;
+    }
   }
   
 }
@@ -481,6 +540,25 @@ export default {
 
     &-line5 {
       
+    }
+
+    &-href-s-box {
+      flex-direction: column;
+      padding: 0px 0px 16px;
+      font-size: 24px;
+
+      & a:first-child {
+        
+      }
+    }
+
+    &-href-s {
+      padding: 0px 0px 18px;
+      opacity: 1; 
+    }
+
+    &-href-s-last {
+      padding: 0px;
     }
   }
   
