@@ -1,15 +1,19 @@
 <template>
   <div id="development" class="develop">
     <div class="develop-title-box">
-      <headTop>
-        <generalTitle :title="'Works'"></generalTitle>
-      </headTop>
+      <generalTitle :title="'Works'"></generalTitle>
+      <div class="develop-scroll">
+        <div @click="scrollTo('development')">Development</div>
+        <div @click="scrollTo('production')">Production</div>
+        <div @click="scrollTo('other')">Other Works</div>
+      </div>
     </div>
+    <div class="develop-headtop"></div>
     <div class="develop-swiper-box">
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Development</div>
-          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+          <div>Translating Taiwan's diverse cultural</div>
         </div>
         <div class="develop-head-more">Learn More &gt;</div>
       </div>
@@ -18,7 +22,7 @@
           v-for="(develop, index) in developList"
           :key="index"
         >
-          <div @click="showPopup(index)">
+          <div @click="showPopup(index, 'develop')">
             <img class="develop-post" :src="develop.post" alt="post">
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
@@ -27,8 +31,6 @@
         <div class="swiper-scrollbar" slot="scrollbar"></div>
       </swiper>
     </div>
-
-
 
     <div id="production" class="develop-swiper-box">
       <div class="develop-head">
@@ -40,10 +42,10 @@
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
-          v-for="(develop, index) in developList"
+          v-for="(develop, index) in productionList"
           :key="index"
         >
-          <div @click="showPopup(index)">
+          <div @click="showPopup(index, 'production')">
             <img class="develop-post" :src="develop.post" alt="post">
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
@@ -64,10 +66,10 @@
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
-          v-for="(develop, index) in developList"
+          v-for="(develop, index) in otherList"
           :key="index"
         >
-          <div @click="showPopup(index)">
+          <div @click="showPopup(index, 'other')">
             <img class="develop-post" :src="develop.post" alt="post">
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
@@ -113,6 +115,8 @@
 <script>
 
 import { developList } from '@/assets/list/developList'
+import { productionList } from '@/assets/list/productionList'
+import { otherList } from '@/assets/list/otherList'
 export default {
   head: {
     title: 'RISING FILMS',
@@ -133,6 +137,8 @@ export default {
   data () {
     return {
       developList: developList,
+      productionList: productionList,
+      otherList: otherList,
       isPostPopup: false,
       selectedFilm: {
         post: require('@/assets/img/develop/EX1.png'),
@@ -229,24 +235,40 @@ export default {
     }
   },
   mounted() {
-    // this.scrollTo()
     if(this.$route.hash != '') {
-      this.scrollTo()
+      this.scrollTo('href')
     }
   },
   computed: {
 
   },
   methods: {
-    showPopup(index) {
-      this.selectedFilm = this.developList[index]
+    showPopup(index, type) {
+      switch (type) {
+        case 'develop':
+          this.selectedFilm = this.developList[index]
+          break;
+        case 'production':
+          this.selectedFilm = this.productionList[index]
+          break;
+        case 'other':
+          this.selectedFilm = this.otherList[index]
+          break;
+        default:
+      }
+      
       this.isPostPopup = true
     },
     switchPopup (isPopup) {
       this.isPostPopup = isPopup
     },
-    scrollTo() {
-      let tempId = this.$route.hash.substring(1, this.$route.hash.length)
+    scrollTo(position) {
+      let tempId
+      if(position == 'href') {
+        tempId = this.$route.hash.substring(1, this.$route.hash.length)
+      } else {
+        tempId = position
+      }      
       document.getElementById(tempId).scrollIntoView({ behavior: 'smooth' })
     }
   },
@@ -254,7 +276,7 @@ export default {
     '$route': {
       handler: function(route) {
         if(this.$route.hash != '') {
-          this.scrollTo()
+          this.scrollTo('href')
         }
       },
       deep: true
@@ -268,7 +290,35 @@ export default {
 .develop {
 
   &-title-box {
-    margin-left: 13%;
+    position: fixed;
+    top: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 126px - 13%);
+    margin: 0px 126px 0px 13%;
+    z-index: 2;
+  }
+
+  &-scroll {
+    display: flex;
+    align-items: center;
+
+    & div {
+      margin-left: 24px;
+      padding-bottom: 5px;
+      opacity: 0.2;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        border-bottom: 1px solid white;
+      }
+    }
+  }
+
+  &-headtop {
+    padding-top: 200px;
   }
 
   &-swiper-box {
@@ -418,11 +468,76 @@ export default {
 .develop {
 
   &-title-box {
-    margin-left: 27px;
+    top: 80px;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: initial;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    & div:first-child {
+      padding: 0px 27px;
+    }
+  }
+
+  &-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+
+    & div:nth-child(1) {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    & div:nth-child(2) {
+      margin: 0px 28px;
+      padding: 0;
+    }
+
+    & div:nth-child(3) {
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  &-headtop {
+    padding-top: 83px;
   }
 
   &-swiper-box {
     margin: 92px 0px 86px 27px;
+  }
+
+  &-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px 0px 34px 0px;
+    font-size: 14px;
+
+    &-row {
+      width: 50%;
+      flex-direction: column;
+      align-items: initial;
+
+      & div:first-child {
+        margin-right: 0px;
+        font-size: 24px;
+      }
+
+      & div:last-child {
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    &-more {
+      margin-right: 20px;
+    }
+
   }
 
   &-swiper {

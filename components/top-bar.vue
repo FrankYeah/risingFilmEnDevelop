@@ -1,12 +1,12 @@
 <template>
   <div class="top">
     
-    <router-link class="top-logo" to="/">
+    <nuxt-link class="top-logo" to="/">
       <img
         :src="require('@/assets/img/icon/logo.png')"
         alt="logo"
       >
-    </router-link>
+    </nuxt-link>
     <img @click="isShowMenu = true"
       class="top-menu"
       :src="require('@/assets/img/icon/menu.png')"
@@ -21,7 +21,7 @@
       >
         <div class="top-popup-row">
           <div class="top-popup-animate5">
-            <span class="top-popup-lang" style="opacity: 0.3;">中</span>
+            <a href="https://www.risingfilms.com.tw" target="_blank" class="top-popup-lang" style="opacity: 0.3;">中</a>
             ｜
             <span>EN</span>
           </div>
@@ -32,7 +32,7 @@
           >
         </div>
         <div class="top-popup-link">
-          <router-link to="/about">
+          <nuxt-link to="/about">
             <div @click="closeMenu"
               @mouseover="hoverLink('about')" 
               @mouseleave="leaveLink"
@@ -41,7 +41,7 @@
               {'top-popup-href-light': isAllLight}]"
             >About</div>
             <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
-          </router-link>
+          </nuxt-link>
 
           <div @click="isHover.developmentIn = true"
             @mouseover="hoverLink('development')"
@@ -53,41 +53,41 @@
             @mouseover="hoverLink('development')"
             class="top-popup-href-s-box"
           >
-            <router-link to="/works#development">
+            <nuxt-link to="/works#development">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s"
               >Development</div>
-            </router-link>
-            <router-link to="/works#production">
+            </nuxt-link>
+            <nuxt-link to="/works#production">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s"
               >Production</div>
-            </router-link>
-            <router-link to="/works#other">
+            </nuxt-link>
+            <nuxt-link to="/works#other">
               <div @click="closeMenu"
                 @mouseover="hoverLink('development')"
                 class="top-popup-href-s top-popup-href-s-last"
               >Other Works</div>
-            </router-link>
+            </nuxt-link>
           </div>
-          <router-link to="/virtual">
+          <nuxt-link to="/virtual">
             <div @click="closeMenu"
               @mouseover="hoverLink('virtual')" 
               @mouseleave="leaveLink" 
               :class="['top-popup-href top-popup-href4 top-popup-animate3', {'top-popup-href-dark': !isHover.virtual}, {'top-popup-href-light': isAllLight}]"
             >Virtual Production</div>
             <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line4': isHover.virtual}]"></div>
-          </router-link>
-          <router-link to="/contact">
+          </nuxt-link>
+          <nuxt-link to="/contact">
             <div @click="closeMenu"
               @mouseover="hoverLink('contact')" 
               @mouseleave="leaveLink" 
               :class="['top-popup-href top-popup-href5 top-popup-animate4', {'top-popup-href-dark': !isHover.contact}, {'top-popup-href-light': isAllLight}]"
             >Contact</div>
             <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line5': isHover.contact}]"></div>
-          </router-link>
+          </nuxt-link>
         </div>
       </div>
     </transition>
@@ -182,7 +182,7 @@ export default {
   top: 0px;
   left: 0px;
   width: calc(100% - 64px);
-  z-index: 2;
+  z-index: 3;
 
   &-logo {
     position: fixed;

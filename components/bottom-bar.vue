@@ -1,9 +1,13 @@
 <template>
   <div class="bottom">
     <div class="bottom-social">
-      <img v-lazy="require('@/assets/img/icon/fb.png')" alt="fb">
-      <img v-lazy="require('@/assets/img/icon/ig.png')" alt="ig">
-      <img v-lazy="require('@/assets/img/icon/mail.png')" alt="mail">
+      <a href="https://www.facebook.com/RisingFilmsAsia" target="_blank">
+        <img v-lazy="require('@/assets/img/icon/fb.png')" alt="fb">
+      </a>
+      <a href="https://www.instagram.com/risingfilmsasia/" target="_blank">
+        <img v-lazy="require('@/assets/img/icon/ig.png')" alt="ig">
+      </a>
+      <img @click="sendMail" v-lazy="require('@/assets/img/icon/mail.png')" alt="mail">
     </div>
     <div class="bottom-copyright">© 2021, RISING FILMS ALL RIGHTS RESERVED</div>
   </div>
@@ -26,12 +30,14 @@ export default {
 
   },
   methods: {
-    
+    sendMail() {
+      window.location.href = "mailto:info@rising-film.com?subject="+"&body="
+    }
   },
   watch: {
     '$route.name': {
       handler: function(route) {
-        // this.isShowTopSide = route == 'login' ?  false : true
+        
       },
       immediate: true
     },
