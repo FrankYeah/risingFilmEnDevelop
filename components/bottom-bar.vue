@@ -2,7 +2,7 @@
   <div class="bottom">
     <div class="bottom-social">
       <a href="https://www.facebook.com/RisingFilmsAsia" target="_blank">
-        <img v-lazy="require('@/assets/img/icon/fb.png')" alt="fb">
+        <img class="bottom-fb" v-lazy="require('@/assets/img/icon/fb.png')" alt="fb">
       </a>
       <a href="https://www.instagram.com/risingfilmsasia/" target="_blank">
         <img v-lazy="require('@/assets/img/icon/ig.png')" alt="ig">
@@ -55,17 +55,25 @@ export default {
   padding: 0px 32px;
 
   &-social {
+    
 
     & img {
       width: 20px;
       height: 100%;
       margin-right: 18px;
+      opacity: 0.7;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
+  }
+
+  &-fb {
+    width: 10px !important;
   }
 
   &-copyright {

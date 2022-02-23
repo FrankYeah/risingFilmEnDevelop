@@ -48,7 +48,9 @@
           :key="index"
         >
           <div @click="showPopup(index, 'production')">
-            <img class="develop-post" :src="develop.post" alt="post">
+            <div class="develop-post-box">
+              <img class="develop-post" :src="develop.post" alt="post">
+            </div>
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
           </div>
@@ -72,7 +74,9 @@
           :key="index"
         >
           <div @click="showPopup(index, 'other')">
-            <img class="develop-post" :src="develop.post" alt="post">
+            <div class="develop-post-box">
+              <img class="develop-post" :src="develop.post" alt="post">
+            </div>
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
           </div>
@@ -328,7 +332,10 @@ export default {
     & div {
       margin-left: 24px;
       padding-bottom: 5px;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       opacity: 0.2;
+      
       cursor: pointer;
 
       &:hover {
@@ -377,6 +384,8 @@ export default {
 
     &-more {
       opacity: 0.5;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {

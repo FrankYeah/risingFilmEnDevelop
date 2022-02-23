@@ -79,10 +79,13 @@ export default {
     right: 32px;
     width: 39px;
     height: 39px;
+    opacity: 0.5;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
     cursor: pointer;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 1;
     }
   }
 }
