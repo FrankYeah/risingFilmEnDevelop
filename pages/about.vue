@@ -24,7 +24,9 @@
           :key="index"
           @click="selectPerson(index)"
         >
-          <img class="about-person" v-lazy="team.person" alt="person">
+          <div class="about-person-box">
+            <img class="about-person" v-lazy="team.person" alt="person">
+          </div>  
           <div class="about-name">{{ team.name }}</div>
           <div class="about-name-title">{{ team.title }}</div>
         </div>
@@ -171,12 +173,22 @@ export default {
     cursor: pointer;
 
     &:hover {
-      opacity: 0.8;
+      
+      .about-person {
+        transform: scale(1.2);
+      }
     }
+  }
+
+  &-person-box {
+    border-radius: 100%;
+    overflow: hidden;
   }
 
   &-person {
     width: 260px;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
   }
 
   &-name {

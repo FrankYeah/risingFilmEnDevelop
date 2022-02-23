@@ -23,7 +23,9 @@
           :key="index"
         >
           <div @click="showPopup(index, 'develop')">
-            <img class="develop-post" :src="develop.post" alt="post">
+            <div class="develop-post-box">
+              <img class="develop-post" :src="develop.post" alt="post">
+            </div>
             <div class="develop-title">{{ develop.name }}</div>
             <div class="develop-date">{{ develop.date }}</div>
           </div>
@@ -393,7 +395,10 @@ export default {
     cursor: pointer;
 
     &:hover {
-      opacity: 0.8;
+      
+      .develop-post {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -407,8 +412,14 @@ export default {
 
   }
 
+  &-post-box {
+    overflow: hidden;
+  }
+
   &-post {
     width: 250px;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
   }
 
   &-title {

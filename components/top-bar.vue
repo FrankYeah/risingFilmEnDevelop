@@ -192,10 +192,11 @@ export default {
     & img {
       width: 42px;
       height: 100%;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {
-        opacity: 0.8;
       }
     }
 
@@ -207,10 +208,13 @@ export default {
     right: 32px;
     width: 52px;
     height: 52px;
+    opacity: 0.5;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
     cursor: pointer;
 
     &:hover {
-      opacity: 0.8;
+      opacity: 1;
     }
   }
 
@@ -254,15 +258,22 @@ export default {
 
       & img {
         width: 40px;
+        opacity: 0.5;
+        transition: all 1s;
+        transition-delay: 0.6s;
+        transition-timing-function: cubic-bezier(.94,-0.01,.08,1);
         cursor: pointer;
 
         &:hover {
-          opacity: 0.8;
+          opacity: 1;
         }
       }
     }
 
     &-lang {
+      transition: all 1s;
+      transition-delay: 0.4s;
+      transition-timing-function: cubic-bezier(.94,-0.01,.08,1);
       cursor: pointer;
 
       &:hover {
