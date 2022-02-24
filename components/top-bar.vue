@@ -253,7 +253,7 @@ export default {
       font-size: 24px;
 
       & img {
-        width: 40px;
+        width: 30px;
         opacity: 0.5;
         transition: all 0.4s;
         transition-timing-function: ease-in-out;

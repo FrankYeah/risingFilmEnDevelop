@@ -64,7 +64,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(23, 23, 25, 0.8);
-  z-index: 2;
+  z-index: 3;
 
   &-box {
     position: relative;
@@ -77,8 +77,8 @@ export default {
     position: absolute;
     top: 32px;
     right: 32px;
-    width: 39px;
-    height: 39px;
+    width: 30px;
+    height: 30px;
     opacity: 0.5;
     transition: all 0.4s;
     transition-timing-function: ease-in-out;
