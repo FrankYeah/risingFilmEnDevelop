@@ -5,7 +5,11 @@
         <generalTitle :title="'Virtual Production'"></generalTitle>
       </headTop>
     </boxWidth>
-    <div class="virtual-head">COMING SOON</div>
+    <div class="virtual-box">
+      <div class="virtual-line"></div>
+      <div class="virtual-head">COMING SOON</div>
+    </div>
+    
   </div>
 </template>
 
@@ -47,11 +51,23 @@ export default {
 
 .virtual {
 
-  &-head {
+  &-box {
     position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    top: 0px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
+  &-line {
+    width: calc(50vw - 287px);
+    margin-right: 46px;
+    height: 1px;
+    background-color: #818181;
+  }
+
+  &-head {
     text-align: center;
     font-size: 64px;
     font-weight: 900;
@@ -65,14 +81,40 @@ export default {
 
 .virtual {
 
+  &-box {
+    
+  }
+
+  &-line {
+    
+  }
+
   &-head {
-    width: 212px;
-    font-size: 48px;
-    text-align: left;
   }
   
 }
 
+}
+
+@media( max-width: 550px ){
+
+  .virtual {
+
+    &-box {
+      
+    }
+
+    &-line {
+      width: calc(50vw - 117px);
+      margin-right: 11px;
+    }
+
+    &-head {
+      width: 212px;
+      font-size: 48px;
+      text-align: left;
+    }
+  }
 }
 
 

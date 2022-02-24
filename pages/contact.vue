@@ -1,42 +1,38 @@
 <template>
   <div class="contact">
-    <div class="contact-box">
-      <div class="contact-row">
-        <div class="contact-row-inner">
-          <div class="contact-line"></div>
-          <div class="contact-head">Contact</div>
-        </div>
-        <form @submit.prevent="handleSubmit()"
-          method="POST"
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf6FRXZuWT0Y1KeI1TVgUcbrCeRgTpCrkNPFwKsjAnveCYxZg/formResponse"
-          target="_blank"
-          class="contact-form"
-        >
-          <input :class="['contact-input', {'contact-nofill': !isForm.name}]" v-model="name" @focus="focusInput('name')" type="text" placeholder="Name">
-          <input :class="['contact-input', {'contact-nofill': !isForm.phone}]" v-model="phone" @focus="focusInput('phone')" type="text" placeholder="Phone">
-          <input :class="['contact-input', {'contact-nofill': !isForm.mail}]" v-model="mail" @focus="focusInput('mail')" type="text" placeholder="E-Mail">
-          <div :class="['contact-select', {'contact-nofill': !isForm.service}]">
-            <el-select v-model="service" @focus="focusInput('service')" placeholder="Select service">
-              <el-option
-                v-for="item in serviceOptions"
-                :key="item.value"
-                :label="item.value"
-                :value="item.value"
-              >
-              </el-option>
-            </el-select>
-          </div>
-          <textarea :class="['contact-input contact-textarea', {'contact-nofill': !isForm.message}]" @focus="focusInput('message')" v-model="message" placeholder="Message"></textarea>
-          <div class="contact-btn-box">
-            <div class="contact-error-text">
-              <span v-if="!isPass">Please Fill Required field above</span>
-            </div>
-            <button class="contact-btn">Submit</button>
-          </div>
-        </form>
-        
-      </div>
+    <div class="contact-row-inner">
+      <div class="contact-line"></div>
+      <div class="contact-head">Contact</div>
     </div>
+    <form @submit.prevent="handleSubmit()"
+      method="POST"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf6FRXZuWT0Y1KeI1TVgUcbrCeRgTpCrkNPFwKsjAnveCYxZg/formResponse"
+      target="_blank"
+      class="contact-form"
+    >
+      <input :class="['contact-input', {'contact-nofill': !isForm.name}]" v-model="name" @focus="focusInput('name')" type="text" placeholder="Name">
+      <input :class="['contact-input', {'contact-nofill': !isForm.phone}]" v-model="phone" @focus="focusInput('phone')" type="text" placeholder="Phone">
+      <input :class="['contact-input', {'contact-nofill': !isForm.mail}]" v-model="mail" @focus="focusInput('mail')" type="text" placeholder="E-Mail">
+      <div :class="['contact-select', {'contact-nofill': !isForm.service}]">
+        <el-select v-model="service" @focus="focusInput('service')" placeholder="Select service">
+          <el-option
+            v-for="item in serviceOptions"
+            :key="item.value"
+            :label="item.value"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
+      </div>
+      <textarea :class="['contact-input contact-textarea', {'contact-nofill': !isForm.message}]" @focus="focusInput('message')" v-model="message" placeholder="Message"></textarea>
+      <div class="contact-btn-box">
+        <div class="contact-error-text">
+          <span v-if="!isPass">Please Fill Required field above</span>
+        </div>
+        <button class="contact-btn">Submit</button>
+      </div>
+    </form>
+        
     <div v-if="isShowPopup" @click="closePopup" class="contact-popup">
       <div @click.stop class="contact-popup-box">
         <img class="contact-popup-img" v-lazy="require('@/assets/img/icon/success.png')" alt="success">
@@ -170,30 +166,19 @@ export default {
 
 .contact {
   position: relative;
-  max-width: 1200px;
-  height: calc(100vh - 70px);
-  margin: auto;
-
-  &-box {
-    margin: auto;
-    position: absolute;
-    // left: 0%;
-    top: 50%;
-    transform: translate(0%, calc(-50% + 20px));
-  }
-
-  &-row {
-    display: flex;
-    align-items: center;
-  }
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 
   &-row-inner {
     display: flex;
     align-items: center;
+    width: 50vw;
   }
 
   &-line {
-    width: 200px;
+    width: calc(50vw - 421px);
     height: 1px;
     background-color: #818181;
   }
@@ -287,6 +272,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin: 0px 27px;
       padding: 60px 32px 48px;
       background-color: #29292A;
     }
@@ -333,25 +319,16 @@ export default {
 @media( max-width: 1023px ){
 
 .contact {
-  height: 100%;
-  margin-top: 118px;
-
-  &-box {
-    position: initial;
-    transform: translate(0px);
-  }
-
-  &-row {
-    flex-direction: column;
-    align-items: initial;
-  }
+  flex-direction: column;
+  margin: 118px 0px;
 
   &-row-inner {
+    width: 100%;
     margin-bottom: 67px;
   }
 
   &-line {
-    width: 100px;
+    width: calc(50vw - 100px);
   }
 
   &-head {
@@ -360,9 +337,10 @@ export default {
   }
 
   &-form {
-    max-width: 340px;
-    margin: auto;
-    padding: 0px 24px;
+    max-width: 330px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 0px;
   }
 
   &-input {
