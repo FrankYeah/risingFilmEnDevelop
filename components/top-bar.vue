@@ -26,7 +26,7 @@
             <span>EN</span>
           </div>
           <img @click="closeMenu"
-            class="top-popup-animate5"
+            class="top-popup-animate6"
             :src="require('@/assets/img/icon/close.png')"
             alt="close"
           >
@@ -288,6 +288,8 @@ export default {
     &-href {
       font-style: italic;
       padding: 14px 0px;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       :hover {
@@ -320,38 +322,51 @@ export default {
     }
 
     &-animate1 {
-      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-      animation-duration: 1s;
-      animation-delay: 0.3s;
-      animation-fill-mode: backwards;
-    }
-
-    &-animate2 {
-      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
-      animation-duration: 1s;
-      animation-delay: 0.4s;
-      animation-fill-mode: backwards;
-    }
-
-    &-animate3 {
-      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+      animation: hrefAnimate; /* referring directly to the animation's @keyframe declaration */
       animation-duration: 1s;
       animation-delay: 0.5s;
       animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
     }
 
-    &-animate4 {
-      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    &-animate2 {
+      animation: hrefAnimate; /* referring directly to the animation's @keyframe declaration */
       animation-duration: 1s;
       animation-delay: 0.6s;
       animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
     }
 
-    &-animate5 {
-      animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
+    &-animate3 {
+      animation: hrefAnimate; /* referring directly to the animation's @keyframe declaration */
       animation-duration: 1s;
       animation-delay: 0.7s;
       animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
+    }
+
+    &-animate4 {
+      animation: hrefAnimate; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 0.8s;
+      animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
+    }
+
+    &-animate5 {
+      animation: hrefAnimate; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 1.1s;
+      animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
+    }
+
+    &-animate6 {
+      animation: closeAnimate; /* referring directly to the animation's @keyframe declaration */
+      animation-duration: 1s;
+      animation-delay: 1.1s;
+      animation-fill-mode: backwards;
+      animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
     }
 
     &-line {
@@ -398,7 +413,9 @@ export default {
 
     &-href-s {
       padding-right: 60px;
-      opacity: 0.15;      
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
+      opacity: 0.15; 
 
       &:hover {
         opacity: 1;
@@ -416,7 +433,8 @@ export default {
 
 // bg 動態
 .fade-enter-active {
-  transition: width .3s;
+  transition: width .6s;
+  transition-timing-function: cubic-bezier(.94,-0.01,.08,1);
 }
 
 .fade-enter {
@@ -427,6 +445,19 @@ export default {
   width: 0px;
 }
 
+@keyframes hrefAnimate {
+  0%   { opacity: 0; transform: translateX(60px); }
+  30%  { opacity: 0; }
+  66%  {  }
+  99%  { opacity: 1; transform: translateX(0px); }
+}
+
+@keyframes closeAnimate {
+  0%   { opacity: 0; transform: translateX(60px); }
+  30%  { opacity: 0; }
+  66%  {  }
+  99%  { opacity: 0.5; transform: translateX(0px); }
+}
 
 
 @media( max-width: 1023px ){
