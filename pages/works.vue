@@ -3,9 +3,9 @@
     <div class="develop-title-box">
       <generalTitle :title="'Works'"></generalTitle>
       <div class="develop-scroll">
-        <div @click="scrollTo('development')">Development</div>
-        <div @click="scrollTo('production')">Production</div>
-        <div @click="scrollTo('other')">Other Works</div>
+        <div :class="[{'develop-scroll-current': currentPosition == 'development'}]" @click="scrollTo('development')">Development</div>
+        <div :class="[{'develop-scroll-current': currentPosition == 'production'}]" @click="scrollTo('production')">Production</div>
+        <div :class="[{'develop-scroll-current': currentPosition == 'other'}]" @click="scrollTo('other')">Other Works</div>
       </div>
     </div>
     <div class="develop-headtop"></div>
@@ -64,7 +64,7 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Other Works</div>
-          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+          <div></div>
         </div>
         <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
       </div>
@@ -160,6 +160,8 @@ export default {
       developList: developList,
       productionList: productionList,
       otherList: otherList,
+      scrollTop: null,
+      currentPosition: 'development',
       isPostPopup: false,
       isMorePopup: false,
       selectedFilm: {
@@ -257,9 +259,13 @@ export default {
     }
   },
   mounted() {
+    window.addEventListener('scroll', this.handleScroll, false)
     if(this.$route.hash != '') {
       this.scrollTo('href')
     }
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll, false)
   },
   computed: {
 
@@ -295,6 +301,21 @@ export default {
         tempId = position
       }      
       document.getElementById(tempId).scrollIntoView({ behavior: 'smooth' })
+    },
+    handleScroll() {
+      this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0
+      let tempDevelopment = document.getElementById('development').offsetTop
+      let tempProduction = document.getElementById('production').offsetTop
+      let tempOther = document.getElementById('other').offsetTop
+      if(this.scrollTop + 200 > tempOther) {
+        this.currentPosition = 'other'
+      } else if(this.scrollTop + 200 > tempProduction){
+        this.currentPosition = 'production'
+      } else {
+        this.currentPosition = 'development'
+      }
+
+      
     }
   },
   watch: {
@@ -340,9 +361,13 @@ export default {
 
       &:hover {
         opacity: 1;
-        border-bottom: 1px solid white;
+        border-bottom: 0.5px solid white;
       }
     }
+  }
+
+  &-scroll-current {
+    opacity: 1 !important;
   }
 
   &-headtop {
