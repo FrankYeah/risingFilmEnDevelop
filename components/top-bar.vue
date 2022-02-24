@@ -224,10 +224,6 @@ export default {
 
     & img {
       cursor: pointer;
-
-      &:hover {
-        opacity: 0.8;
-      }
     }
     
     & img:first-child {
@@ -259,9 +255,8 @@ export default {
       & img {
         width: 40px;
         opacity: 0.5;
-        transition: all 1s;
-        transition-delay: 0.6s;
-        transition-timing-function: cubic-bezier(.94,-0.01,.08,1);
+        transition: all 0.4s;
+        transition-timing-function: ease-in-out;
         cursor: pointer;
 
         &:hover {
@@ -271,9 +266,8 @@ export default {
     }
 
     &-lang {
-      transition: all 1s;
-      transition-delay: 0.4s;
-      transition-timing-function: cubic-bezier(.94,-0.01,.08,1);
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {

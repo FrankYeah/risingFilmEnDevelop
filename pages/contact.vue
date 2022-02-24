@@ -261,6 +261,8 @@ export default {
     background-color: transparent;
     color: white;
     font-size: 24px;
+    transition: all 0.4s;
+    transition-timing-function: ease-in-out;
     cursor: pointer;
 
     &:hover {
@@ -316,6 +318,8 @@ export default {
       background-color: transparent;
       color: white;
       font-size: 24px;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {

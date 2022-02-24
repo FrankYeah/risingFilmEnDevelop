@@ -43,7 +43,7 @@ export default {
 .loading {
   position: fixed;
   left: 0px;
-  top: 0px;
+  bottom: 0px;
   width: calc(100%);
   height: 100vh;
   display: flex;
@@ -71,23 +71,25 @@ export default {
 
 .loading-animate1 {
   animation-name: blackBg;
-  animation-duration: 0.8s;
-  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-delay: 0s;
   animation-fill-mode: forwards;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes blackBg {
-  0%   {  }
-  30%  { opacity: 1; height: 100vh; }
-  100% { opacity: 0; height: 0px; visibility: hidden; }
+  0%   { opacity: 1; height: 0vh; }
+  15%  { opacity: 1; height: 100vh; }
+  50%  { opacity: 1; height: 100vh; top: 0px; }
+  85%  { opacity: 1; height: 100vh; }
+  100% { opacity: 1; height: 0px; top: 0px; visibility: hidden; }
 }
 
 .loading-animate2 {
   animation-name: textAnimate1;
   animation-duration: 1.5s;
   animation-delay: 0.5s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: ease-in-out;
 }
 
 @keyframes textAnimate1 {
@@ -101,7 +103,7 @@ export default {
   animation-name: textAnimate2;
   animation-duration: 1.5s;
   animation-delay: 0.7s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: ease-in-out;
 }
 
 @keyframes textAnimate2 {

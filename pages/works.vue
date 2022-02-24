@@ -528,10 +528,13 @@ export default {
       top: 33px;
       right: 19px;
       width: 20px;
+      opacity: 0.5;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
       cursor: pointer;
 
       &:hover {
-        opacity: 0.8;
+        opacity: 1;
       }
     }
 
