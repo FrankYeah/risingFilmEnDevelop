@@ -24,8 +24,8 @@ export default {
       { hid: 'og:image' , property: 'og:image' , content: 'logo.png'},
       { hid: 'og:type' , property: 'og:type' , content: 'website'},
       // { hid: 'og:url' , property: 'og:url' , content: ''},
-      { hid: 'description', name: 'description', content: '' },
-      { hid: 'og:description' , property: 'og:description' , content: ''},
+      { hid: 'description', name: 'description', content: 'Rising Films has been promoting talents in Taiwanese film industry and managing resources, ideas and business models, in hope of creating a new future.' },
+      { hid: 'og:description' , property: 'og:description' , content: 'Rising Films has been promoting talents in Taiwanese film industry and managing resources, ideas and business models, in hope of creating a new future.'},
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/risingFilmEn/favicon.ico' }

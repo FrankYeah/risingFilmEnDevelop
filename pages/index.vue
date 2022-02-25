@@ -7,12 +7,12 @@
 
 <script>
 export default {
-  head: {
-    title: 'RISING FILMS',
-    meta: [
-      { name: 'keywords', content: 'RISING FILMS'},
-    ]
-  },
+  // head: {
+  //   title: 'RISING FILMS',
+  //   meta: [
+  //     { name: 'keywords', content: 'RISING FILMS'},
+  //   ]
+  // },
   layout: 'default',
   components: {
   },

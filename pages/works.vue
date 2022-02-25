@@ -139,12 +139,12 @@ import { developList } from '@/assets/list/developList'
 import { productionList } from '@/assets/list/productionList'
 import { otherList } from '@/assets/list/otherList'
 export default {
-  head: {
-    title: 'RISING FILMS',
-    meta: [
-      { name: 'keywords', content: 'RISING FILMS'},
-    ]
-  },
+  // head: {
+  //   title: 'RISING FILMS',
+  //   meta: [
+  //     { name: 'keywords', content: 'RISING FILMS'},
+  //   ]
+  // },
   layout: 'default',
   components: {
     boxWidth: require('~/components/general-boxwidth.vue').default,

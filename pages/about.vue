@@ -63,12 +63,12 @@
 import { teamList } from '@/assets/list/teamList'
 import { partnerList } from '@/assets/list/partnerList'
 export default {
-  head: {
-    title: 'RISING FILMS',
-    meta: [
-      { name: 'keywords', content: 'RISING FILMS'},
-    ]
-  },
+  // head: {
+  //   title: 'RISING FILMS',
+  //   meta: [
+  //     { name: 'keywords', content: 'RISING FILMS'},
+  //   ]
+  // },
   layout: 'default',
   components: {
     boxWidth: require('~/components/general-boxwidth.vue').default,
