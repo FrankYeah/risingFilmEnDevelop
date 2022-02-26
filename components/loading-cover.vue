@@ -49,7 +49,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #171719;
+  background-color: #29292A;;
   text-align: center;
   z-index: 5;
 
@@ -78,7 +78,7 @@ export default {
 }
 
 @keyframes blackBg {
-  0%   { opacity: 1; height: 0vh; }
+  0%   { opacity: 1; height: 100vh; }
   15%  { opacity: 1; height: 100vh; }
   50%  { opacity: 1; height: 100vh; top: 0px; }
   85%  { opacity: 1; height: 100vh; }

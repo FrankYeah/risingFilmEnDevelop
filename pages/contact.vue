@@ -205,6 +205,7 @@ export default {
     &::placeholder {
       color: #FFFFFF;
       font-style: italic;
+      opacity: 0.5;
     }
   }
 
@@ -221,6 +222,7 @@ export default {
     &::placeholder {
       color: #FFFFFF;
       font-style: italic;
+      opacity: 0.5;
     }
   }
 
@@ -347,7 +349,7 @@ export default {
     
 
     &::placeholder {
-      
+      opacity: 0.5;
     }
   }
 
@@ -360,7 +362,7 @@ export default {
     margin-bottom: 46px;
 
     &::placeholder {
-      
+      opacity: 0.5;
     }
   }
 
@@ -432,7 +434,7 @@ export default {
   .contact-select .el-select .el-input__inner::placeholder {
     font-style: italic;
     color: white;
-    opacity: 1;
+    opacity: 0.5;
   }
 
   .el-popper .popper__arrow::after {

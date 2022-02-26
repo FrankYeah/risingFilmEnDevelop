@@ -13,9 +13,9 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Development</div>
-          <div>Translating Taiwan's diverse cultural</div>
+          <div>To translate diverse cultural and creative industries in Taiwan. To develop Taiwanese soft power.</div>
         </div>
-        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
+        <div @click="switchMorePopup('development')" class="develop-head-more">Learn More &gt;</div>
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -38,9 +38,9 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Production</div>
-          <div>Translating Taiwan's diverse cultural and creative industries to develop Taiwan's soft power</div>
+          <div>To be based in Taiwan, seeking international achievements. To look for international collaboration.</div>
         </div>
-        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
+        <div @click="switchMorePopup('production')" class="develop-head-more">Learn More &gt;</div>
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -66,7 +66,7 @@
           <div>Other Works</div>
           <div></div>
         </div>
-        <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div>
+        <!-- <div @click="isMorePopup = true" class="develop-head-more">Learn More &gt;</div> -->
       </div>
       <swiper class="swiper develop-swiper" :options="swiperOption" ref="mySwiper">
         <swiper-slide class="develop-slide"
@@ -119,15 +119,8 @@
     <div v-if="isMorePopup" @click="isMorePopup = false" class="develop-popups">
       <div @click.stop class="develop-popups-box">
         <img @click="isMorePopup = false" class="develop-popups-close" :src="require('@/assets/img/icon/close.png')" alt="close">
-        <div class="develop-popups-head">台灣故事 國際觀眾</div>
-        <div class="develop-popups-text">
-          持續扶植影視人才、得獎導演、新銳導演
-          擴大故事來源至出版、劇本獎
-          手握近400部影視優先開發授權之作品
-          從開發、編劇與企劃開始，就導入虛擬製作思維
-          擴大影視敘事的格局與可能性
-          讓台灣作品持續登上國際舞台
-        </div>
+        <div v-html="moreHead" class="develop-popups-head"></div>
+        <div v-html="moreText" class="develop-popups-text"></div>
       </div>
     </div>
   </div>
@@ -163,6 +156,8 @@ export default {
       currentPosition: 'development',
       isPostPopup: false,
       isMorePopup: false,
+      moreHead: '',
+      moreText: '',
       selectedFilm: {
         post: require('@/assets/img/develop/EX1.png'),
         name: 'Terrorizers',
@@ -289,8 +284,25 @@ export default {
     switchPopup (isPopup) {
       this.isPostPopup = isPopup
     },
-    switchMorePopup (isPopup) {
-      this.isMorePopup = isPopup
+    switchMorePopup (popup) {
+      this.isMorePopup = true
+      if(popup == 'development') {
+        this.moreHead = `Local Taiwanese Stories<br>with a Global Audience`
+        this.moreText = `
+        To continue to cultivate talents, award-winning and new directors.<br>
+        To extend the sources of stories to novels and award-winning screenplays with priority development authorization of more than four hundred IP works.<br>
+        To introduce virtual production concepts at the beginning of development, script writing and marketing, in order to extend the spectrum and possibilities of narratives for movies and TV shows and further promote Taiwanese works onto the world stage.
+
+        `
+      } else {
+        this.moreHead = `Professional Productions<br>
+                        Domestic and Foreign Traditional and Virtual Movies and TV Projects.`
+        this.moreText = `
+        To continue to produce critically and commercially well received domestic projects while expanding internationally.<br>
+        To coordinate foreign production teams’ projects in Taiwan and to offer backup virtual production technology to demonstrate our team’s proficiency and global vision.
+
+        `
+      }
     },
     scrollTo(position) {
       let tempId
@@ -336,7 +348,7 @@ export default {
 
   &-title-box {
     position: fixed;
-    top: 150px;
+    top: 124px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -370,7 +382,7 @@ export default {
   }
 
   &-headtop {
-    padding-top: 200px;
+    padding-top: 174px;
   }
 
   &-swiper-box {
@@ -395,7 +407,7 @@ export default {
       & div:first-child {
         margin-right: 36px;
         font-size: 32px;
-        font-weight: 900;
+        font-weight: 300;
         opacity: 1;
       }
 
@@ -533,6 +545,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    line-height: 1.5;
     background-color: rgba(23, 23, 25, 0.8);
     z-index: 2;
 
@@ -540,18 +553,16 @@ export default {
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      max-width: 288px;
-      margin: 0px 27px;
-      padding: 84px 24px 56px;
+      max-width: 458px;
+      padding: 30px 27px 64px;
       background-color: #29292A;
     }
 
     &-close {
       position: absolute;
       top: 33px;
-      right: 19px;
-      width: 20px;
+      right: 27px;
+      width: 27px;
       opacity: 0.5;
       transition: all 0.4s;
       transition-timing-function: ease-in-out;
@@ -563,15 +574,14 @@ export default {
     }
 
     &-head {
+      margin-top: 44px;
       font-weight: bold;
       font-size: 24px;
     }
 
     &-text {
-      margin-top: 24px;
+      margin-top: 32px;
       font-size: 14px;
-      text-align: center;
-      line-height: 32px;
       
       opacity: 0.5;
     }
@@ -738,6 +748,26 @@ export default {
       max-width: 180px;
       width: 45%;
       margin: 0px 0px 10px 0px;
+    }
+  }
+
+  &-popups {
+    
+
+    &-box {
+      margin: 0px 24px;
+    }
+
+    &-close {
+      right: 19px;
+    }
+
+    &-head {
+      font-size: 18px;
+    }
+
+    &-text {
+      font-size: 14px;
     }
   }
   
