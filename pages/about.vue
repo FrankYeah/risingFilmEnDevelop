@@ -4,19 +4,24 @@
       <headTop>
         <generalTitle :title="'About'"></generalTitle>
       </headTop>
-      <div class="about-pre1">Rising Films gathers resources to inject Taiwanese film and television talents</div>
-      <div class="about-pre2">
-        <div>Resources</div>
-        <div>Creativity</div>
-        <div>Business Models</div>
-      </div>
-      <div class="about-pre3">Combining resources, creativity, and business models, Create a new bureau of film and television in Taiwan.</div>
+      
+      <div class="about-pre">Rising Films has been promoting talents in Taiwanese film industry and managing resources, ideas and business models, in hope of creating a new future</div>
     </boxWidth>
     <div class="about-post-box">
       <img class="about-post" :src="require('@/assets/img/about/post.jpg')" alt="post">
     </div>
     <boxWidth>
-      <div class="about-desc">In 2021, he will invest in the production of "Youth Killing Love" directed by He Weiting, Won the Golden Horse Award and was shortlisted for five awards.</div>
+      <div class="about-post-text">2022 Vision for Rising Films/Collaboration with Award-winning Teams in the Industry</div>
+      <div class="about-post-text2">Producer Widing Ho and director KUANG Sheng in charge of making international projects with virtual production teams in Hollywood.</div>
+    </boxWidth>
+
+    <div class="about-banner-box">
+      <img class="about-banner" :src="require('@/assets/img/about/banner2.png')" alt="post">
+    </div>
+
+    <boxWidth>
+      <div class="about-banner-text">Marketing Department integrating markets and productions, aiming at creating market values through crossover projects and multimedia to build brand values and relying on professionals’ expertise in all fields in the industry to promote virtual production ideas and ideals.</div>
+      <div class="about-banner-text2">US virtual studio construction consultants to work on building a 270-degree circular arc LED virtual studio and establish an international filmmaking production operation procedure in Taiwan.</div>
       <div class="about-title">OUR TEAM</div>
       <div class="about-intro">
         <div class="about-team-box" 
@@ -115,25 +120,11 @@ export default {
 
 .about {
   padding-bottom: 60px;
-
-  &-pre1 {
-    margin-top: 32px;
-    font-size: 48px;
     line-height: 1.2;
-  }
 
-  &-pre2 {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 48px;
-    font-size: 48px;
-    font-weight: 900;
-  }
-
-  &-pre3 {
-    width: 523px;
-    margin-top: 60px;
-    line-height: 1.3;
+  &-pre {
+    margin-top: 32px;
+    font-size: 32px;
   }
 
   &-post-box {
@@ -143,19 +134,41 @@ export default {
   &-post {
     max-width: 1000px;
     width: 100%;
-    margin-top: 90px;
+    margin-top: 54px;
     text-align: center;
   }
 
-  &-desc {
-    width: 650px;
-    margin: 68px auto 0px;
+  &-post-text {
+    margin-top: 53px;
+  }
+
+  &-post-text2 {
+    margin-top: 24px;
+  }
+
+  &-banner-box {
     text-align: center;
-    line-height: 1.5;
+  }
+
+  &-banner {
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  &-banner-text {
+    margin-top: 80px;
+    opacity: 0.7;
+  }
+
+  &-banner-text2 {
+    margin-top: 50px;
+    opacity: 0.7;
   }
 
   &-title {
-    margin-top: 140px;
+    margin-top: 118px;
     font-size: 48px;
   }
 
@@ -175,7 +188,7 @@ export default {
     &:hover {
       
       .about-person {
-        transform: scale(1.2);
+        transform: scale(1.1);
       }
     }
   }
@@ -197,12 +210,12 @@ export default {
   }
 
   &-name-title {
-    transform: translateY(-16px);
+    transform: translateY(-20px);
     opacity: 0.5;
   }
 
   &-partner-title {
-    margin-top: 60px;
+    margin-top: 43px;
     font-size: 48px;
   }
 
@@ -263,25 +276,9 @@ export default {
 .about {
   padding-bottom: 0px;
 
-  &-pre1 {
-    margin-top: 19px;
+  &-pre {
+    margin-top: 26px;
     font-size: 20px;
-  }
-
-  &-pre2 {
-    flex-direction: column;
-    margin-top: 17px;
-    font-size: 24px;
-
-    & div {
-      margin-bottom: 11px;
-    }
-  }
-
-  &-pre3 {
-    width: 100%;
-    margin-top: 16px;
-    font-size: 14px;
   }
 
   &-post-box {
@@ -289,16 +286,35 @@ export default {
   }
 
   &-post {
-    margin-top: 42px;
+    margin-top: 29px;
   }
 
-  &-desc {
-    width: 100%;
-    margin-top: 31px;
+  &-post-text {
+    margin-top: 48px;
+  }
+
+  &-post-text2 {
+    margin-top: 36px;
+  }
+
+  &-banner-box {
+    
+  }
+
+  &-banner {
+    margin-top: 48px;
+  }
+
+  &-banner-text {
+    margin-top: 48px;
+  }
+
+  &-banner-text2 {
+    margin-top: 36px;
   }
 
   &-title {
-    margin: 60px 0px 3px;
+    margin: 64px 0px 3px;
     font-size: 24px;
   }
 

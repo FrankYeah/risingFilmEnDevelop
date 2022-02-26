@@ -147,7 +147,6 @@ export default {
   // },
   layout: 'default',
   components: {
-    boxWidth: require('~/components/general-boxwidth.vue').default,
     headTop: require('~/components/general-headtop.vue').default,
     generalTitle: require('~/components/general-title.vue').default,
     generalPopup: require('~/components/general-popup.vue').default

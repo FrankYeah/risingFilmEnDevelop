@@ -244,7 +244,7 @@ export default {
     width: calc(100% - 64px);
     height: 100vh;
     padding: 32px 32px 0px 32px;
-    background-color: #171719;
+    background-color: #29292A;
 
     &-row {
       display: flex;
@@ -302,7 +302,7 @@ export default {
     }
 
     &-href-dark {
-      opacity: 0.05;
+      opacity: 0.2;
     }
 
     &-href1 {
