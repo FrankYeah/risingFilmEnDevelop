@@ -43,10 +43,19 @@
             <div @click="closeMenu" :class="['top-popup-line', {'top-popup-line-show top-popup-line1': isHover.about}]"></div>
           </nuxt-link>
 
+          <nuxt-link to="/works">
+            <div
+              @mouseover="hoverLink('development')"
+              :class="['top-desktop top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
+            >Works</div>
+          </nuxt-link>
+
           <div @click="isHover.developmentIn = true"
             @mouseover="hoverLink('development')"
-            :class="['top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
+            :class="['top-rwd top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
           >Works</div>
+
+
           <div @click="closeMenu" @mouseover="hoverLink('development')" :class="['top-popup-line', {'top-popup-line-show top-popup-line2': isHover.development}]" ></div>
 
           <div v-if="isHover.developmentIn"
@@ -183,6 +192,14 @@ export default {
   left: 0px;
   width: calc(100% - 64px);
   z-index: 3;
+
+  &-desktop {
+    display: block;
+  }
+
+  &-rwd {
+    display: none;
+  }
 
   &-logo {
     position: fixed;
@@ -463,6 +480,14 @@ export default {
 @media( max-width: 1023px ){
 
 .top {
+
+  &-desktop {
+    display: none;
+  }
+
+  &-rwd {
+    display: block;
+  }
   
 
   &-logo {
