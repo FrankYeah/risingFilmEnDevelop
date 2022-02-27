@@ -242,8 +242,9 @@ export default {
 
   &-btn {
     width: 200px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
-    padding: 15px 0px;
     border: 1px solid #FFFFFF;
     background-color: transparent;
     color: white;

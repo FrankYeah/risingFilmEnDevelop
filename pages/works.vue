@@ -188,7 +188,8 @@ export default {
           el: ".swiper-scrollbar",
         },
         autoplay: {
-          disableOnInteraction: false
+          disableOnInteraction: false,
+          delay: 5000
         },
       },
       swiperOption2: {
@@ -395,7 +396,7 @@ $line-height-abs: -60px;
     }
 
     &-more {
-      width: 100px;
+      width: 124px;
       opacity: 0.5;
       transition: all 0.4s;
       transition-timing-function: ease-in-out;
