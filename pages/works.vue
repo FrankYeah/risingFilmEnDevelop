@@ -1,11 +1,13 @@
 <template>
   <div id="development" class="develop">
-    <div class="develop-title-box">
-      <generalTitle :title="'Works'"></generalTitle>
-      <div class="develop-scroll">
-        <div :class="[{'develop-scroll-current': currentPosition == 'development'}]" @click="scrollTo('development')">Development</div>
-        <div :class="[{'develop-scroll-current': currentPosition == 'production'}]" @click="scrollTo('production')">Production</div>
-        <div :class="[{'develop-scroll-current': currentPosition == 'other'}]" @click="scrollTo('other')">Other Works</div>
+    <div class="develop-title-outer">
+      <div class="develop-title-box">
+        <generalTitle :title="'Works'"></generalTitle>
+        <div class="develop-scroll">
+          <div :class="[{'develop-scroll-current': currentPosition == 'development'}]" @click="scrollTo('development')">Development</div>
+          <div :class="[{'develop-scroll-current': currentPosition == 'production'}]" @click="scrollTo('production')">Production</div>
+          <div :class="[{'develop-scroll-current': currentPosition == 'other'}]" @click="scrollTo('other')">Other Works</div>
+        </div>
       </div>
     </div>
     <div class="develop-headtop"></div>
@@ -319,9 +321,18 @@ $line-height-abs: -60px;
 
 .develop {
 
-  &-title-box {
+  &-title-outer {
     position: fixed;
-    top: 124px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 150px;
+    padding-bottom: 16px;
+    background-color: #171719;
+    z-index: 2;
+  }
+
+  &-title-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -612,6 +623,17 @@ $line-height-abs: -60px;
 @media( max-width: 1023px ){
 
 .develop {
+  
+  &-title-outer {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    height: 145px;
+    padding-bottom: 16px;
+    background-color: #171719;
+    z-index: 2;
+  }
 
   &-title-box {
     top: 80px;
@@ -701,6 +723,10 @@ $line-height-abs: -60px;
 
   .swiper-scrollbar-drag {
 
+  }
+
+  &-hint {
+    display: none;
   }
 
   &-post {

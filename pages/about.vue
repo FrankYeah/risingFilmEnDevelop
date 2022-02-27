@@ -52,7 +52,7 @@
             <div class="about-popup-title">{{ selectedPerson.name }}</div>
             <div class="about-popup-sub">{{ selectedPerson.title }}</div>
             <div class="about-popup-desc">{{ selectedPerson.desc }}</div>
-            <div class="about-popup-awards">Awards</div>
+            <div v-if="selectedPerson.awards.length != 0" class="about-popup-awards">Awards</div>
             <div class="about-popup-award"
               v-for="(award, index) in selectedPerson.awards"
               :key="index">{{ award.name }}</div>
