@@ -108,7 +108,8 @@
                 v-for="(stage, index) in selectedFilm.stages"
                 :key="index"
               >
-                <img class="develop-popup-stage" :src="stage.name" alt="post">
+                <div class="develop-popup-stage" v-lazy:background-image="`${stage.name}`"></div>
+                <!-- <img class="develop-popup-stage" :src="stage.name" alt="post"> -->
               </swiper-slide>
               <div class="swiper-scrollbar" slot="scrollbar"></div>
             </swiper>
@@ -196,31 +197,11 @@ export default {
         scrollbar: {
           el: ".swiper-scrollbar",
         },
+        slidesPerView: "auto",
+        spaceBetween: 12,
         autoplay: {
           disableOnInteraction: false
         },
-        breakpoints: {
-          1300: {
-            slidesPerView: 4,
-            spaceBetween: 30,
-          },
-          1000: {
-            slidesPerView: 3,
-            spaceBetween: 30,
-          },
-          800: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          340: {
-            slidesPerView: 2,
-            spaceBetween: -30,
-          },
-          320: {
-            slidesPerView: 2,
-            spaceBetween: 0,
-          }
-        }
       }
     }
   },
@@ -283,7 +264,19 @@ export default {
       } else {
         tempId = position
       }      
-      document.getElementById(tempId).scrollIntoView({ behavior: 'smooth' })
+      // document.getElementById(tempId).scrollIntoView({ behavior: 'smooth' })
+      let currentScreen = window.screen.width
+      let yOffset
+      if(currentScreen > 1023) {
+        yOffset = -200
+      } else {
+        yOffset = -180
+      }
+      
+      const element = document.getElementById(tempId)
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset
+
+      window.scrollTo({top: y, behavior: 'smooth'});
     },
     handleScroll() {
       this.scrollTop = document.documentElement.scrollTop || document.body.scrollTop || 0
@@ -397,13 +390,14 @@ $line-height-abs: -60px;
       }
 
       & div:last-child {
-        width: 370px;
+        margin-right: 20px;
         line-height: 1.2;
         opacity: 0.5;
       }
     }
 
     &-more {
+      width: 100px;
       opacity: 0.5;
       transition: all 0.4s;
       transition-timing-function: ease-in-out;
@@ -548,11 +542,17 @@ $line-height-abs: -60px;
     }
 
     &-slide {
-
+      width: 136px;
     }
 
     &-stage {
       width: 136px;
+      height: 80px;
+      margin-bottom: 18px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: center;
+      background-position-y: center;
     }
 
     &-awards {
@@ -680,6 +680,7 @@ $line-height-abs: -60px;
   }
 
   &-head {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -687,7 +688,6 @@ $line-height-abs: -60px;
     font-size: 14px;
 
     &-row {
-      width: 50%;
       flex-direction: column;
       align-items: initial;
 
@@ -703,6 +703,10 @@ $line-height-abs: -60px;
     }
 
     &-more {
+      position: absolute;
+      top: 4px;
+      right: 0px;
+      width: auto;
       margin-right: 20px;
     }
 
@@ -780,11 +784,11 @@ $line-height-abs: -60px;
     }
 
     &-slide {
-
+      
     }
 
     &-stage {
-      width: 120px;
+      
     }
 
     &-awards {

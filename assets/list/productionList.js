@@ -5,10 +5,11 @@ export const productionList = [
     date: '2021.07',
     desc: `The movie "Youth Killing Love" mainly describes the story of six characters who seem to be unrelated, but influence each other, and finally get involved in the case of random murder of teenagers. Concept, to explore the living environment of the Z generation, surrounded by virtual, online games, Internet celebrities, social public opinion, family issues, etc... Carrying these virtual but real sights, in a murder case that everyone fears, we can See "no one is an outsider"`,
     stages: [
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') }
+      { name: require('@/assets/img/develop/photo1.jpg') },
+      { name: require('@/assets/img/develop/photo2.jpg') },
+      { name: require('@/assets/img/develop/photo3.jpg') },
+      { name: require('@/assets/img/develop/photo4.jpg') },
+      { name: require('@/assets/img/develop/photo5.jpg') }
     ],
     awards: [
       { name: require('@/assets/img/about/award1.png') },
@@ -23,10 +24,11 @@ export const productionList = [
     date: '2021.09',
     desc: `The movie "Youth Killing Love" mainly describes the story of six characters who seem to be unrelated, but influence each other, and finally get involved in the case of random murder of teenagers. Concept, to explore the living environment of the Z generation, surrounded by virtual, online games, Internet celebrities, social public opinion, family issues, etc... Carrying these virtual but real sights, in a murder case that everyone fears, we can See "no one is an outsider"`,
     stages: [
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') }
+      { name: require('@/assets/img/develop/photo1.jpg') },
+      { name: require('@/assets/img/develop/photo2.jpg') },
+      { name: require('@/assets/img/develop/photo3.jpg') },
+      { name: require('@/assets/img/develop/photo4.jpg') },
+      { name: require('@/assets/img/develop/photo5.jpg') }
     ],
     awards: [
       { name: require('@/assets/img/about/award1.png') },
@@ -41,10 +43,11 @@ export const productionList = [
     date: '2021.12',
     desc: `The movie "Youth Killing Love" mainly describes the story of six characters who seem to be unrelated, but influence each other, and finally get involved in the case of random murder of teenagers. Concept, to explore the living environment of the Z generation, surrounded by virtual, online games, Internet celebrities, social public opinion, family issues, etc... Carrying these virtual but real sights, in a murder case that everyone fears, we can See "no one is an outsider"`,
     stages: [
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') }
+      { name: require('@/assets/img/develop/photo1.jpg') },
+      { name: require('@/assets/img/develop/photo2.jpg') },
+      { name: require('@/assets/img/develop/photo3.jpg') },
+      { name: require('@/assets/img/develop/photo4.jpg') },
+      { name: require('@/assets/img/develop/photo5.jpg') }
     ],
     awards: [
       { name: require('@/assets/img/about/award1.png') },
@@ -59,10 +62,11 @@ export const productionList = [
     date: '2022.01',
     desc: `The movie "Youth Killing Love" mainly describes the story of six characters who seem to be unrelated, but influence each other, and finally get involved in the case of random murder of teenagers. Concept, to explore the living environment of the Z generation, surrounded by virtual, online games, Internet celebrities, social public opinion, family issues, etc... Carrying these virtual but real sights, in a murder case that everyone fears, we can See "no one is an outsider"`,
     stages: [
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') },
-      { name: require('@/assets/img/about/partner1.png') }
+      { name: require('@/assets/img/develop/photo1.jpg') },
+      { name: require('@/assets/img/develop/photo2.jpg') },
+      { name: require('@/assets/img/develop/photo3.jpg') },
+      { name: require('@/assets/img/develop/photo4.jpg') },
+      { name: require('@/assets/img/develop/photo5.jpg') }
     ],
     awards: [
       { name: require('@/assets/img/about/award1.png') },

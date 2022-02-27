@@ -34,12 +34,13 @@ export default {
 .boxwidth {
   max-width: 1000px;
   margin: auto;
+  padding: 0px 27px;
 }
 
 @media( max-width: 1023px ){
 
 .boxwidth {
-  padding: 0px 27px;
+  
 }
 
 }

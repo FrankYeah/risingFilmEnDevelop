@@ -21,7 +21,7 @@
       >
         <div class="top-popup-row">
           <div class="top-popup-animate5">
-            <a href="https://www.risingfilms.com.tw" target="_blank" class="top-popup-lang" style="opacity: 0.3;">中</a>
+            <a href="https://frankyeah.github.io/risingFilmCh/" target="_blank" class="top-popup-lang" style="opacity: 0.3;">中</a>
             ｜
             <span>EN</span>
           </div>

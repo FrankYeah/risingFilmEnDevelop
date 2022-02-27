@@ -65,13 +65,14 @@ export default {
   animation-duration: 2s;
   animation-delay: 3s;
   animation-fill-mode: backwards;
-  animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
+  // animation-timing-function: cubic-bezier(.94,-0.01,.08,1);
 }
 
 @keyframes indexAnimate1 {
   0%   { letter-spacing: 0.05px; opacity: 0; transform: translateY(10px); }
   16%  { opacity: 1; transform: translateY(0px); }
   50% { opacity: 1; transform: translateY(0px); letter-spacing: 0.05px; }
+  75% { letter-spacing: 0.1em; }
   99% { letter-spacing: 0.1em; }
 }
 
