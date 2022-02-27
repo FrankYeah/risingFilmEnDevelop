@@ -44,7 +44,7 @@
           </nuxt-link>
 
           <nuxt-link to="/works">
-            <div @click="isHover.developmentIn = true"
+            <div @click="closeMenu"
               @mouseover="hoverLink('development')"
               :class="['top-desktop top-popup-href top-popup-href2 top-popup-animate2', {'top-popup-href-dark': !isHover.development}, {'top-popup-href-light': isAllLight}]"
             >Works</div>
