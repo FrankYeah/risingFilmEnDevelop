@@ -71,7 +71,8 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-  letter-spacing: 0.05px;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
 	vertical-align: baseline;
   scroll-behavior: smooth;
 }
@@ -102,7 +103,6 @@ table {
 }
 
 body {
-  line-height: 1;
   margin: 0px;
   padding: 0px;
   font-family: 'Roboto', 'Noto Sans TC', 'Noto Sans SC' ,sans-serif;

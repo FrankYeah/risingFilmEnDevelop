@@ -97,7 +97,6 @@ export default {
 
   &-copyright {
     width: 164px;
-    line-height: 1.2;
     text-align: right;
   }
 }

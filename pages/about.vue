@@ -22,7 +22,10 @@
     <boxWidth>
       <div class="about-banner-text">Marketing Department integrating markets and productions, aiming at creating market values through crossover projects and multimedia to build brand values and relying on professionals’ expertise in all fields in the industry to promote virtual production ideas and ideals.</div>
       <div class="about-banner-text2">US virtual studio construction consultants to work on building a 270-degree circular arc LED virtual studio and establish an international filmmaking production operation procedure in Taiwan.</div>
-      <div class="about-title">OUR TEAM</div>
+      <div class="about-title">
+        <div>Professional Teams</div>
+        <div>To include development, production and marketing talents. To create a one-stop business model.</div>
+      </div>
       <div class="about-intro">
         <div class="about-team-box" 
           v-for="(team, index) in teamList"
@@ -120,7 +123,6 @@ export default {
 
 .about {
   padding-bottom: 60px;
-    line-height: 1.2;
 
   &-pre {
     margin-top: 32px;
@@ -134,6 +136,7 @@ export default {
   &-post {
     max-width: 1000px;
     width: 100%;
+    padding: 0px 27px;
     margin-top: 54px;
     text-align: center;
   }
@@ -156,6 +159,7 @@ export default {
     max-width: 1000px;
     width: 100%;
     margin-top: 80px;
+    padding: 0px 27px;
     text-align: center;
   }
 
@@ -170,8 +174,19 @@ export default {
   }
 
   &-title {
-    margin-top: 118px;
-    font-size: 48px;
+    display: flex;
+    align-items: center;
+    margin-top: 112px;
+
+    & div:first-child {
+      width: 327px;
+      margin-right: 48px;
+      font-size: 32px;
+    }
+
+    & div:last-child {
+      font-size: 14px;
+    }
   }
 
   &-intro {
@@ -218,7 +233,7 @@ export default {
 
   &-partner-title {
     margin-top: 43px;
-    font-size: 48px;
+    font-size: 32px;
   }
 
   &-partner-box {
@@ -231,6 +246,7 @@ export default {
 
   &-partner {
     width: 195px;
+    height: 100%;
   }
 
   &-popup {
@@ -260,8 +276,7 @@ export default {
     }
 
     &-desc {
-      margin-top: 24px;
-      line-height: 1.3;
+      margin: 23px 34px 0px 0px;
       font-size: 14px;
       opacity: 0.5;
     }
@@ -295,6 +310,7 @@ export default {
 
   &-post {
     margin-top: 29px;
+    padding: 0px;
   }
 
   &-post-text {
@@ -311,6 +327,7 @@ export default {
 
   &-banner {
     margin-top: 48px;
+    padding: 0px;
   }
 
   &-banner-text {
@@ -322,8 +339,18 @@ export default {
   }
 
   &-title {
-    margin: 64px 0px 3px;
-    font-size: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 64px;
+    
+    & div:first-child {
+      margin-right: 0px;
+      font-size: 24px;
+    }
+
+    & div:last-child {
+      margin-top: 16px;
+    }
   }
 
   &-intro {
@@ -361,6 +388,7 @@ export default {
   &-partner {
     max-width: 180px;
     width: 45%;
+    height: 100%;
   }
 
   &-popup {
@@ -393,7 +421,7 @@ export default {
     }
 
     &-desc {
-      margin-top: 13px;
+      margin: 13px 0px 0px 0px;
     }
 
     &-awards {

@@ -391,8 +391,6 @@ $line-height-abs: -60px;
 
       & div:last-child {
         margin-right: 20px;
-        line-height: 1.2;
-        opacity: 0.5;
       }
     }
 
@@ -528,7 +526,6 @@ $line-height-abs: -60px;
 
     &-desc {
       margin-top: 30px;
-      line-height: 1.3;
       font-size: 14px;
       opacity: 0.5;
     }
@@ -563,6 +560,7 @@ $line-height-abs: -60px;
 
     &-award {
       width: 120px;
+      height: 100%;
       margin: 0px 24px 10px 0px;
     }
   }
@@ -576,7 +574,6 @@ $line-height-abs: -60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 1.5;
     background-color: rgba(23, 23, 25, 0.8);
     z-index: 2;
 
@@ -798,6 +795,7 @@ $line-height-abs: -60px;
     &-award {
       max-width: 180px;
       width: 45%;
+      height: 100%;
       margin: 0px 0px 10px 0px;
     }
   }

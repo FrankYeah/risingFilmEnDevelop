@@ -331,7 +331,7 @@ export default {
     }
 
     &-href4 {
-      width: 580px;
+      width: 635px;
     }
 
     &-href5 {
@@ -410,7 +410,7 @@ export default {
     }
 
     &-line4 {
-      width: 580px;
+      width: 635px;
     }
 
     &-line5 {
@@ -537,7 +537,6 @@ export default {
 
     &-link {
       font-size: 48px;
-      line-height: 1.1;
 
       & a:first-child {
         
@@ -545,6 +544,7 @@ export default {
     }
 
     &-href {
+      line-height: 1;
       width: 270px !important;
       padding: 24px 0px;
     }

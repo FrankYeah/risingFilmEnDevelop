@@ -58,6 +58,7 @@ export default {
     & div:first-child {
       font-size: 24px;
       font-weight: 900;
+      letter-spacing: 0.1em;
       opacity: 0;
     }
 
