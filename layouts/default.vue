@@ -39,11 +39,14 @@ export default {
   },
   watch: {
     '$route.name': {
-      handler: function() {
-        this.isLoading = true
-        setTimeout(() => {
-          this.isLoading = false
-        }, 3000)
+      handler: function(name) {
+        if(name == 'index') {
+          this.isLoading = true
+          setTimeout(() => {
+            this.isLoading = false
+          }, 3000)
+        }
+        
       },
       immediate: true
     }

@@ -24,7 +24,7 @@
       <div class="about-banner-text2">US virtual studio construction consultants to work on building a 270-degree circular arc LED virtual studio and establish an international filmmaking production operation procedure in Taiwan.</div>
       <div class="about-title">
         <div>Professional Teams</div>
-        <div>To include development, production and marketing talents. To create a one-stop business model.</div>
+        <div>To include development, production and marketing talents.<br>To create a one-stop business model.</div>
       </div>
       <div class="about-intro">
         <div class="about-team-box" 
@@ -54,7 +54,7 @@
           <div class="about-popup-column">
             <div class="about-popup-title">{{ selectedPerson.name }}</div>
             <div class="about-popup-sub">{{ selectedPerson.title }}</div>
-            <div class="about-popup-desc">{{ selectedPerson.desc }}</div>
+            <div class="about-popup-desc" v-html="selectedPerson.desc"></div>
             <div v-if="selectedPerson.awards.length != 0" class="about-popup-awards">Awards</div>
             <div class="about-popup-award"
               v-for="(award, index) in selectedPerson.awards"
@@ -126,7 +126,8 @@ export default {
 
   &-pre {
     margin-top: 32px;
-    font-size: 32px;
+    font-size: 28px;
+    text-align: justify;
   }
 
   &-post-box {
@@ -148,6 +149,7 @@ export default {
 
   &-post-text2 {
     margin-top: 24px;
+    text-align: justify;
     opacity: 0.7;
   }
 
@@ -165,11 +167,13 @@ export default {
 
   &-banner-text {
     margin-top: 80px;
+    text-align: justify;
     opacity: 0.7;
   }
 
   &-banner-text2 {
     margin-top: 50px;
+    text-align: justify;
     opacity: 0.7;
   }
 
@@ -185,6 +189,7 @@ export default {
     }
 
     & div:last-child {
+      text-align: justify;
       font-size: 14px;
     }
   }
@@ -278,6 +283,7 @@ export default {
     &-desc {
       margin: 23px 34px 0px 0px;
       font-size: 14px;
+      text-align: justify;
       opacity: 0.5;
     }
 
@@ -378,7 +384,7 @@ export default {
 
   &-partner-title {
     font-size: 24px;
-    margin: 32px 0px 50px;
+    margin: 50px 0px 50px;
   }
 
   &-partner-box {

@@ -8,7 +8,7 @@ export default {
   },
   head: {
     titleTemplate: '%s',
-    title: '風度影業 RISING FILMS',
+    title: 'RISING FILMS',
     htmlAttrs: {
       lang: 'en'
     },

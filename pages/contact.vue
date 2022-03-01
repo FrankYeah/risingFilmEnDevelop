@@ -167,7 +167,7 @@ export default {
 .contact {
   position: relative;
   width: 100%;
-  height: 100vh;
+  padding-top: 150px;
   display: flex;
   align-items: center;
 
@@ -322,6 +322,7 @@ export default {
 
 .contact {
   flex-direction: column;
+  padding-top: 0px;
   margin: 118px 0px;
 
   &-row-inner {

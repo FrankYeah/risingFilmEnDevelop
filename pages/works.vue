@@ -15,7 +15,7 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Development</div>
-          <div>To translate diverse cultural and creative industries in Taiwan. To develop Taiwanese soft power.</div>
+          <div>To translate diverse cultural and creative industries in Taiwan.<br>To develop Taiwanese soft power.</div>
         </div>
         <div @click="switchMorePopup('development')" class="develop-head-more">Learn More &gt;</div>
       </div>
@@ -241,18 +241,17 @@ export default {
     switchMorePopup (popup) {
       this.isMorePopup = true
       if(popup == 'development') {
-        this.moreHead = `Local Taiwanese Stories<br>with a Global Audience`
+        this.moreHead = `Local Taiwanese Stories with a Global Audience`
         this.moreText = `
-        To continue to cultivate talents, award-winning and new directors.<br>
-        To extend the sources of stories to novels and award-winning screenplays with priority development authorization of more than four hundred IP works.<br>
+        To continue to cultivate talents, award-winning and new directors.<br><br>
+        To extend the sources of stories to novels and award-winning screenplays with priority development authorization of more than four hundred IP works.<br><br>
         To introduce virtual production concepts at the beginning of development, script writing and marketing, in order to extend the spectrum and possibilities of narratives for movies and TV shows and further promote Taiwanese works onto the world stage.
 
         `
       } else {
-        this.moreHead = `Professional Productions<br>
-                        Domestic and Foreign Traditional and Virtual Movies and TV Projects.`
+        this.moreHead = `Professional Productions; Domestic and Foreign Traditional and Virtual Movies and TV Projects.`
         this.moreText = `
-        To continue to produce critically and commercially well received domestic projects while expanding internationally.<br>
+        To continue to produce critically and commercially well received domestic projects while expanding internationally.<br><br>
         To coordinate foreign production teams’ projects in Taiwan and to offer backup virtual production technology to demonstrate our team’s proficiency and global vision.
 
         `
@@ -365,10 +364,10 @@ $line-height-abs: -60px;
 
   &-swiper-box {
     position: relative;
-    margin: 30px 0px 140px 13%;
+    margin: 30px 36px 140px 13%;
 
     &:last-child {
-      margin: 30px 0px 94px 13%;
+      margin: 30px 36px 94px 13%;
     }
   }
 
@@ -392,6 +391,7 @@ $line-height-abs: -60px;
 
       & div:last-child {
         margin-right: 20px;
+        text-align: justify;
       }
     }
 
@@ -528,6 +528,7 @@ $line-height-abs: -60px;
     &-desc {
       margin-top: 30px;
       font-size: 14px;
+      text-align: justify;
       opacity: 0.5;
     }
 
@@ -610,6 +611,7 @@ $line-height-abs: -60px;
 
     &-text {
       margin-top: 32px;
+     text-align: justify;
       font-size: 14px;
       
       opacity: 0.5;
@@ -674,7 +676,7 @@ $line-height-abs: -60px;
   }
 
   &-swiper-box {
-    margin: 92px 0px 86px 27px;
+    margin: 92px 36px 86px 27px;
   }
 
   &-head {

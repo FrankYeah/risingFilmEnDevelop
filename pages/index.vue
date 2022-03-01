@@ -55,6 +55,7 @@ export default {
   &-sub {
     margin-top: 20px;
     font-size: 24px;
+    letter-spacing: 0.1em;
     opacity: 0.5;
   }
   
