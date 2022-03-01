@@ -19,5 +19,5 @@ Vue.use(VueAwesomeSwiper);
 
 // 加入 lazy 解決
 
-import Swiper2, { Navigation, Pagination, EffectFade, Autoplay, Scrollbar, Lazy } from 'swiper'
-Swiper2.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar, Lazy])
+// import Swiper2, { Navigation, Pagination, EffectFade, Autoplay, Scrollbar, Lazy } from 'swiper'
+// Swiper2.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar, Lazy])
