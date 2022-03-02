@@ -108,7 +108,7 @@
                 v-for="(stage, index) in selectedFilm.stages"
                 :key="index"
               >
-                <div class="develop-popup-stage" v-lazy:background-image="`${stage.name}`"></div>
+                <div @click="showPhoto(index)" class="develop-popup-stage" v-lazy:background-image="`${stage.name}`"></div>
                 <!-- <img class="develop-popup-stage" :src="stage.name" alt="post"> -->
               </swiper-slide>
               <div class="swiper-scrollbar" slot="scrollbar"></div>
@@ -132,6 +132,31 @@
         <div v-html="moreText" class="develop-popups-text"></div>
       </div>
     </div>
+
+    <div v-show="isPhotoPopup" @click="isPhotoPopup = false" class="develop-popupss">
+      <div @click.stop class="develop-popupss-box">
+        <div class="develop-popupss-close-box">
+          <img @click="isPhotoPopup = false" class="develop-popupss-close" :src="require('@/assets/img/icon/close.png')" alt="close">
+        </div>
+        <swiper class="swiper develop-popupss-swiper" :options="swiperOption3" ref="mySwiper3">
+          <swiper-slide class="develop-popupss-slide"
+            v-for="(stage, index) in selectedFilm.stages"
+            :key="index"
+          >
+            <img class="develop-popupss-img"
+              :src="stage.name" alt="post"
+            >
+          </swiper-slide>
+        </swiper>
+        <div class="develop-popupss-left">
+          <img @click="nextPhoto('prev')" src="@/assets/img/icon/leftArrow.png" alt="arrow">
+        </div>
+        <div class="develop-popupss-right">
+          <img @click="nextPhoto('next')" src="@/assets/img/icon/rightArrow.png" alt="arrow">
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -167,6 +192,7 @@ export default {
       isMorePopup: false,
       moreHead: '',
       moreText: '',
+      isPhotoPopup: false,
       selectedFilm: {
         post: require('@/assets/img/develop/EX1.png'),
         name: 'Terrorizers',
@@ -203,7 +229,11 @@ export default {
         autoplay: {
           disableOnInteraction: false
         },
-      }
+      },
+      swiperOption3: {
+        mousewheel: true,
+        loop: true
+      },
     }
   },
   mounted() {
@@ -216,7 +246,7 @@ export default {
     window.removeEventListener('scroll', this.handleScroll, false)
   },
   computed: {
-
+    swiper3 () { return this.$refs.mySwiper3.$swiper }
   },
   methods: {
     showPopup(index, type) {
@@ -256,6 +286,28 @@ export default {
 
         `
       }
+    },
+    showPhoto(index) {
+      this.isPhotoPopup = true
+      this.swiper3.slideTo(index + 1)
+    },
+    nextPhoto(position) {
+      if(position == 'prev') {
+        if(this.swiper3.activeIndex == 0) {
+          this.swiper3.slideTo(this.selectedFilm.stages.length - 1)
+        } else {
+          this.swiper3.slideTo(this.swiper3.activeIndex - 1)
+        }
+        
+      } else {
+        
+        if(this.swiper3.activeIndex == this.selectedFilm.stages.length) {
+          this.swiper3.slideTo(1)
+        } else {
+          this.swiper3.slideTo(this.swiper3.activeIndex + 1)
+        }
+      }
+      
     },
     scrollTo(position) {
       let tempId
@@ -375,7 +427,7 @@ $line-height-abs: -60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 126px 34px 0px;
+    padding: 0px 50px 34px 0px;
     font-size: 14px;
 
     &-row {
@@ -552,6 +604,7 @@ $line-height-abs: -60px;
       background-size: cover;
       background-position-x: center;
       background-position-y: center;
+      cursor: pointer;
     }
 
     &-awards {
@@ -615,6 +668,78 @@ $line-height-abs: -60px;
       font-size: 14px;
       
       opacity: 0.5;
+    }
+  }
+
+  &-popupss {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(23, 23, 25, 0.8);
+    overflow: hidden;
+    z-index: 3;
+
+    &-box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 593px;
+      // height: 390px;
+      padding: 16px 20px 20px;
+      overflow: hidden;
+      background-color: #29292A;
+    }
+
+    &-close-box {
+      text-align: right;
+    }
+
+    &-close {
+      width: 27px;
+      opacity: 0.5;
+      transition: all 0.4s;
+      transition-timing-function: ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &-swiper {
+      margin: 17px 0px 0px;
+      overflow: hidden;
+    }
+
+    &-slide {
+      width: 593px;
+      overflow: hidden;
+    }
+
+    &-img {
+      width: 593px;
+      height: 100%;
+    }
+
+    &-left {
+      position: absolute;
+      left: 40px;
+      top: 235px;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    &-right {
+      position: absolute;
+      right: 40px;
+      top: 235px;
+      z-index: 1;
+      cursor: pointer;
     }
   }
   
@@ -822,10 +947,69 @@ $line-height-abs: -60px;
       font-size: 14px;
     }
   }
+
+  
   
 }
 
 }
 
 
+
+@media( max-width: 633px ){
+  
+  .develop {
+
+    &-popupss {
+    
+
+      &-box {
+        width: 100vw;
+        padding: 16px 20px 20px;
+      }
+
+      &-close-box {
+        
+      }
+
+      &-close {
+        width: 27px;
+      }
+
+      &-swiper {
+        margin: 17px 0px 0px;
+      }
+
+      &-slide {
+        width: calc(100vw - 40px);
+      }
+
+      &-img {
+        width: calc(100vw - 40px);
+        height: 100%;
+      }
+
+      &-left {
+        left: 40px;
+        top: calc(50% - 26px);
+      }
+
+      &-right {
+        right: 40px;
+        top: calc(50% - 26px);
+      }
+    
+    }
+
+  }
+
+
+
+}
+
+
+
+
 </style>
+
+
