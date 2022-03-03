@@ -24,7 +24,7 @@
       <div class="about-banner-text2">The international advisors with experiences of setting up Virtual Production will participate with our team in building a 270-degree oval with LED doors Virtual Production Studio in Asia region, creating a smooth Virtual Production pipeline.</div>
       <div class="about-title">
         <div>Professional Teams</div>
-        <div>To include development, production and marketing talents.<br>To create a one-stop business model.</div>
+        <div></div>
       </div>
       <div class="about-intro">
         <div class="about-team-box" 
