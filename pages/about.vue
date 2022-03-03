@@ -5,14 +5,14 @@
         <generalTitle :title="'About'"></generalTitle>
       </headTop>
       
-      <div class="about-pre">Rising Films has been promoting talents in Taiwanese film industry and managing resources, ideas and business models, in hope of creating a new future</div>
+      <div class="about-pre">Tapping into potential resource and upgrade the skills of the local films and TV talents.<br>Integrating resources, creativity, business models to create a new future of Taiwanese Films and TVs.</div>
     </boxWidth>
     <div class="about-post-box">
       <img class="about-post" :src="require('@/assets/img/about/post.jpg')" alt="post">
     </div>
     <boxWidth>
-      <div class="about-post-text">2022 Vision for Rising Films/Collaboration with Award-winning Teams in the Industry</div>
-      <div class="about-post-text2">Producer Widing Ho and director KUANG Sheng in charge of making international projects with virtual production teams in Hollywood.</div>
+      <div class="about-post-text">In 2022, Rising Films is expanding its ambitious plan, and is in collaboration with the other award-winning team in the field. </div>
+      <div class="about-post-text2">Rising Film is joining the Virtual Production Studio in Hollywood to make films with international standard.</div>
     </boxWidth>
 
     <div class="about-banner-box">
@@ -20,8 +20,8 @@
     </div>
 
     <boxWidth>
-      <div class="about-banner-text">Marketing Department integrating markets and productions, aiming at creating market values through crossover projects and multimedia to build brand values and relying on professionals’ expertise in all fields in the industry to promote virtual production ideas and ideals.</div>
-      <div class="about-banner-text2">US virtual studio construction consultants to work on building a 270-degree circular arc LED virtual studio and establish an international filmmaking production operation procedure in Taiwan.</div>
+      <div class="about-banner-text">Our marketing department integrates the film production aspect and market, aims for upgrading potential value for local film industry, working through different mediums and various commmunications, building up our brand value, tapping on the abilitity of each skilled member of the film industry in different disciplines, and promoting the best Virtual Production creative mindset and production work-flow.</div>
+      <div class="about-banner-text2">The international advisors with experiences of setting up Virtual Production will participate with our team in building a 270-degree oval with LED doors Virtual Production Studio in Asia region, creating a smooth Virtual Production pipeline.</div>
       <div class="about-title">
         <div>Professional Teams</div>
         <div>To include development, production and marketing talents.<br>To create a one-stop business model.</div>

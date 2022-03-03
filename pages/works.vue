@@ -15,7 +15,7 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Development</div>
-          <div>To translate diverse cultural and creative industries in Taiwan.<br>To develop Taiwanese soft power.</div>
+          <!-- <div>To translate diverse cultural and creative industries in Taiwan.<br>To develop Taiwanese soft power.</div> -->
         </div>
         <div @click="switchMorePopup('development')" class="develop-head-more">Learn More &gt;</div>
       </div>
@@ -46,7 +46,7 @@
       <div class="develop-head">
         <div class="develop-head-row">
           <div>Production</div>
-          <div>To be based in Taiwan, seeking international achievements. To look for international collaboration.</div>
+          <!-- <div>To be based in Taiwan, seeking international achievements. To look for international collaboration.</div> -->
         </div>
         <div @click="switchMorePopup('production')" class="develop-head-more">Learn More &gt;</div>
       </div>
@@ -273,17 +273,13 @@ export default {
       if(popup == 'development') {
         this.moreHead = `Local Taiwanese Stories with a Global Audience`
         this.moreText = `
-        To continue to cultivate talents, award-winning and new directors.<br><br>
-        To extend the sources of stories to novels and award-winning screenplays with priority development authorization of more than four hundred IP works.<br><br>
-        To introduce virtual production concepts at the beginning of development, script writing and marketing, in order to extend the spectrum and possibilities of narratives for movies and TV shows and further promote Taiwanese works onto the world stage.
-
+        We continue support the local film and TV talents, award-winning directors, new directors, by tapping into the rich resource of stories from publications and award-winning screenplays. During the process of developing and script writing, we hope to incorporate the concept of Virtual Production into the content, expand the scope and possibilities of the storytelling, rising the visibility of Taiwanese films and TVin the world.
         `
       } else {
         this.moreHead = `Professional Productions; Domestic and Foreign Traditional and Virtual Movies and TV Projects.`
         this.moreText = `
-        To continue to produce critically and commercially well received domestic projects while expanding internationally.<br><br>
-        To coordinate foreign production teams’ projects in Taiwan and to offer backup virtual production technology to demonstrate our team’s proficiency and global vision.
-
+        We insist on creating local contents with word-of-mouth qualities and also commercial viability; we also provide production supports to international co-production projects from all over the world.<br><br>
+        Except the  team of international background and  global vision, we have access to Virtual Production Service to solve the production difficulties and streamline a smoother filmmaking experience.
         `
       }
     },
@@ -829,7 +825,7 @@ $line-height-abs: -60px;
 
     &-more {
       position: absolute;
-      top: 4px;
+      top: 20px;
       right: 0px;
       width: auto;
       margin-right: 20px;
